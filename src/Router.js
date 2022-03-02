@@ -16,6 +16,7 @@ import Mainjeongminlee from "./pages/jeongminlee/Main/Main";
 // 지호's 컴포넌트
 import Loginjihokwon from "./pages/jihokwon/Login/Login";
 import Listjihokwon from "./pages/jihokwon/List/List";
+import Detailjihokwon from "./pages/jihokwon/Detail/Detail";
 
 // 민경's 컴포넌트
 import Loginminkyoungkim from "./pages/minkyoungkim/Login/Login";
@@ -31,19 +32,16 @@ function Router() {
       <Routes>
         <Route path="/login-dasongyu" element={<Logindasongyu />} />
         <Route path="/main-dasongyu" element={<Maindasongyu />} />
-
         <Route path="/login-geunhongLim" element={<LogingeunhongLim />} />
         <Route path="/main-geunhongLim" element={<MaingeunhongLim />} />
-
         <Route path="/login-jeongminlee" element={<Loginjeongminlee />} />
         <Route path="/main-jeongminlee" element={<Mainjeongminlee />} />
-
-        <Route path="/login-jhokwon" element={<Loginjihokwon />} />
+        {/* 지호's router */}
+        <Route path="/login-jihokwon" element={<Loginjihokwon />} />
         <Route path="/list-jihokwon" element={<Listjihokwon />} />
-
+        <Route path="/detail-jihokwon" element={<Detailjihokwon />} />
         <Route path="/login-minkyoungkim" element={<Loginminkyoungkim />} />
-        <Route path="/main-minkyoungkim" element={<Mainminkyoungkim />} />
-
+        <Route path="/main-minkyoungkim" element={<Mainminkyoungkim />} />ㅜ
         <Route path="/login-songyipark" element={<Loginsongyipark />} />
         <Route path="/main-songyipark" element={<Mainsongyipark />} />
       </Routes>
