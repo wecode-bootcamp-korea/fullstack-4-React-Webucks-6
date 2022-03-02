@@ -1,5 +1,6 @@
 import React from 'react'
 import './Detail.scss'
+import { Link } from 'react-router-dom'
 
 function DetailComponent() {
   return (
@@ -8,7 +9,7 @@ function DetailComponent() {
               <h1>WeBucks</h1>
               <div className="nav">
                   <span>COFFEE </span>
-                  <span><a href="list.html">MENU</a></span>
+                  <span><Link to="/list-dasongyu">MENU</Link></span>
                   <span>STORE</span>
                   <span>WHAT'S NEW</span>
               </div>
