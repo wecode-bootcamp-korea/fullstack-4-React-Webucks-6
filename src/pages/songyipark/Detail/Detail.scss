@@ -1,0 +1,140 @@
+$bg-color : #eeeeee;
+
+.detail-h1{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.coffee-classify {
+    margin-bottom: 20px;
+    color: gray;
+    font-size: 12px;
+    text-align: right;
+}
+
+.detail-section{
+    display: flex;
+    margin-top: 30px;
+
+    .white-choco-img {
+        width: 380px;
+        height: 330px;
+        margin-right: 40px;
+    }
+}
+
+.detail-content{
+    position: relative;
+    width: 100%;
+
+    .menu-title{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 15px;
+        padding-right: 10px;
+    
+        .detail-h2{
+            font-size: 17px;
+            font-weight: 500;
+        }
+    
+        .detail-h3{
+            font-size: 13px;
+        }
+    }
+
+    .underline{
+        height: 2px;
+        margin-bottom: 20px;
+        border: none;
+        background-color: black;
+    }
+
+    .menu-explain{
+        line-height: 1.3em;
+        font-size: 15px;
+    }
+
+    .underline-repeat{
+        margin: 20px 0;
+        background-color: $bg-color;
+    }
+    
+    .nutri-info-left {
+        padding-left: 20px;
+    }
+    
+    .nutri-info-right {
+        right: 20px;
+        position: absolute;
+    }
+    
+    .kcal-table-grid{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 10px;
+    
+        .kcal-align-right{
+            padding-right: 10px;
+            text-align: right;
+        }
+    
+        .line-dashed{
+            border-right: 2px dashed $bg-color;
+        }
+    }
+    
+    .allergy{
+        margin: 40px 0;
+        padding: 15px;
+        background-color: $bg-color;
+    }
+    
+    .detail-h4{
+        font-size: 17px;
+        font-weight: 500;
+    }
+    
+    .review{
+        .review-id{
+            width: 600px;
+            padding: 3px 0;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .review-comment{
+            margin-left : 5px;
+            font-weight: 400;
+        }
+    }
+    
+    .review-input{
+        display: inline-block;
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px;
+        border: none;
+        background-color: $bg-color;
+    }
+}
+
+.detail-footer{
+    position: absolute;
+    transform: translate(-15%, 0);
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+    margin-top: 100px;
+    padding : 100px 50px;
+    color: white;
+    background-color: black;
+
+    .footer-menu-title div{
+        margin-bottom: 15px;
+    }
+}

@@ -8,7 +8,7 @@ function Login() {
   return (
     <div className="login-full-page">
       <main className = "login-container">
-        <img className = "webucks-img" alt="webucks 로고" src="./images/webucks.png" />
+        <img className = "webucks-img" alt="webucks 로고" src="/images/songyipark/webucks.png" />
         <section className="login-section">
           <input
             className="id"
@@ -23,7 +23,7 @@ function Login() {
               loginBtn();
             }}
           >
-            <Link to="/List">로그인</Link>
+            <Link to="/list-songyipark">로그인</Link>
           </button>
         </section>
         <div className="pw-question">비밀번호를 잊으셨나요?</div>
