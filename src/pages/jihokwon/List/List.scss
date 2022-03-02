@@ -1,0 +1,99 @@
+$menubar-backgroundColor: #f4f4f2;
+$font: "Courier New", Courier, monospace;
+$menu-fontsize: 8px;
+$prod-fontsize: 10px;
+
+@mixin menu {
+  display: flex;
+  margin: 0;
+  padding-left: 10px;
+  list-style: none;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 0;
+}
+
+@mixin li-flex {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+@mixin list-style {
+  padding-right: 15px;
+  text-align: center;
+  list-style: none;
+  font-size: $prod-fontsize;
+}
+
+@mixin imgs-size {
+  width: 250px;
+  height: 250px;
+}
+
+section {
+  font-family: $font;
+}
+
+.menubar {
+  @include menu;
+  background-color: $menubar-backgroundColor;
+
+  li:first-child {
+    font-size: 12px;
+  }
+
+  li:last-child {
+    padding-top: 10px;
+    padding-left: 5px;
+    font-size: $menu-fontsize;
+  }
+}
+
+.list {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+
+  ul {
+    @include flex-center;
+    @include list-style;
+
+    li {
+      @include li-flex;
+    }
+  }
+}
+
+.oneLine {
+  display: flex;
+  padding-top: 10px;
+
+  ul {
+    @include flex-center;
+    @include list-style;
+  }
+
+  li {
+    @include li-flex;
+  }
+}
+
+.imgs img {
+  @include imgs-size;
+  transition: all 0.7s linear;
+}
+
+.imgs {
+  @include imgs-size;
+  overflow: hidden;
+}
+
+.imgs img:hover {
+  transform: scale(1.1);
+}
+
