@@ -6,7 +6,7 @@ function LoginComponent() {
   const navigate = useNavigate();
 
   const goToList = () => {
-    navigate("/List");
+    navigate("/list-jihokwon");
   };
   return (
     <div>

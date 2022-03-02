@@ -6,7 +6,7 @@ function TopsNav() {
     <div>
       <div className="navbar">
         <div>
-          <img src="/images/WeBucks.png" alt="" width="70" />
+          <img src="/images/jihokwon/images/WeBucks.png" alt="" width="70" />
         </div>
         <ul class="navbar__menu">
           <li>COFFEE</li>
