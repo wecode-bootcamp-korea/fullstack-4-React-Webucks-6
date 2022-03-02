@@ -1,5 +1,5 @@
-import "./Main.scss";
-import { Link } from "react-router-dom";
+import './Main.scss';
+import { Link } from 'react-router-dom';
 
 function Main() {
   return (

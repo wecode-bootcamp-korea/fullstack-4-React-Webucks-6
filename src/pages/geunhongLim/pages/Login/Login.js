@@ -1,11 +1,11 @@
-import "./Login.scss";
-import { Link, useNavigate } from "react-router-dom";
+import './Login.scss';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
   const navigate = useNavigate();
 
   const goToList = () => {
-    navigate("/main-geunhongLim");
+    navigate('/main-geunhongLim');
   };
   return (
     <section className="login-box">
