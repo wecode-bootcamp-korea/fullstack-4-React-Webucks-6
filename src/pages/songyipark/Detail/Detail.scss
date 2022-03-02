@@ -2,7 +2,7 @@ $bg-color : #eeeeee;
 
 .detail-h1{
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .coffee-classify {
@@ -31,44 +31,43 @@ $bg-color : #eeeeee;
         display: flex;
         justify-content: space-between;
         align-items: baseline;
-        margin-bottom: 15px;
-        padding-right: 10px;
+        margin-bottom: 20px;
+        padding: 0 10px 10px 0;
+        border-bottom: 2px solid black;
     
         .detail-h2{
-            font-size: 17px;
-            font-weight: 500;
+            margin-bottom: 5px;
+            font-size: 20px;
+            font-weight: 600;
         }
     
         .detail-h3{
-            font-size: 13px;
+            font-size: 12px;
+            font-weight: 350;
         }
-    }
-
-    .underline{
-        height: 2px;
-        margin-bottom: 20px;
-        border: none;
-        background-color: black;
     }
 
     .menu-explain{
         line-height: 1.3em;
         font-size: 15px;
     }
-
-    .underline-repeat{
+    
+    .nutrition{
         margin: 20px 0;
-        background-color: $bg-color;
+        padding: 20px 0;
+        border-top: 2px solid $bg-color;
+        border-bottom: 2px solid $bg-color;
+        
+        .nutri-info-left {
+            padding-left: 20px;
+        }
+        
+        .nutri-info-right {
+            right: 20px;
+            position: absolute;
+        }
     }
-    
-    .nutri-info-left {
-        padding-left: 20px;
-    }
-    
-    .nutri-info-right {
-        right: 20px;
-        position: absolute;
-    }
+
     
     .kcal-table-grid{
         display: grid;
@@ -93,6 +92,9 @@ $bg-color : #eeeeee;
     }
     
     .detail-h4{
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid $bg-color;
         font-size: 17px;
         font-weight: 500;
     }
@@ -100,7 +102,7 @@ $bg-color : #eeeeee;
     .review{
         .review-id{
             width: 600px;
-            padding: 3px 0;
+            padding: 4px 0;
             font-weight: 600;
             white-space: nowrap;
             overflow: hidden;
@@ -120,21 +122,5 @@ $bg-color : #eeeeee;
         padding: 10px;
         border: none;
         background-color: $bg-color;
-    }
-}
-
-.detail-footer{
-    position: absolute;
-    transform: translate(-15%, 0);
-    display: flex;
-    justify-content: space-around;
-    width: 100vw;
-    margin-top: 100px;
-    padding : 100px 50px;
-    color: white;
-    background-color: black;
-
-    .footer-menu-title div{
-        margin-bottom: 15px;
     }
 }
