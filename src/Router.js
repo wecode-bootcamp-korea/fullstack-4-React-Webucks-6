@@ -1,7 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-
 // 다송's 컴포넌트
 import Logindasongyu from './pages/dasongyu/Login/Login';
 import Maindasongyu from './pages/dasongyu/Main/Main';
@@ -12,6 +11,8 @@ import MaingeunhongLim from './pages/geunhongLim/Main/Main';
 
 // 정민's 컴포넌트
 import Loginjeongminlee from './pages/jeongminlee/Login/Login';
+import Detailjeongminlee from './pages/jeongminlee/Detail/Detail';
+import Listjeongminlee from './pages/jeongminlee/List/List';
 import Mainjeongminlee from './pages/jeongminlee/Main/Main';
 
 // 지호's 컴포넌트
@@ -37,6 +38,8 @@ function Router() {
         <Route path='/main-geunhongLim' element={<MaingeunhongLim />} />
 
         <Route path='/login-jeongminlee' element={<Loginjeongminlee />} />
+        <Route path='/detail-jeongminlee' element={<Detailjeongminlee/>}/>
+        <Route path='/list-jeongminlee' element={<Listjeongminlee/>}/>
         <Route path='/main-jeongminlee' element={<Mainjeongminlee />} />
 
         <Route path='/login-jhokwon' element={<Loginjihokwon />} />
