@@ -10,23 +10,24 @@ function Detail() {
         <Nav />
         <main>
           <header>
-            <h1 className="detail-h1">콜드 브루</h1>
+            <h1 className="coffee-h1">콜드 브루</h1>
             <div className="coffee-classify">
               홈 > MENU > 음료 > 에스프레소 > 화이트 초콜릿 모카
             </div>
           </header>
 
-          <article className="detail-section">
+          <article className="detail-article">
             <img
               className="white-choco-img"
               alt="화이트 초콜릿 모카 사진"
               src="/images/songyipark/c1.jpg"
             />
-            <section className="detail-content">
+
+            <section className="menu-section">
               <header className="menu-title">
                 <div>
-                  <h2 className="detail-h2">화이트 초콜릿 모카</h2>
-                  <h3 className="detail-h3">White Chocolate Mocha</h3>
+                  <h2 className="menu-h2">화이트 초콜릿 모카</h2>
+                  <h3 className="menu-h3">White Chocolate Mocha</h3>
                 </div>
                 <i className="far fa-heart"></i>
               </header>
@@ -37,8 +38,8 @@ function Detail() {
                 부드럽게 어우러진 커피
               </p>
 
-              <section>
-                <div className="nutrition">
+              <section className="nutrition-section">
+                <div className="nutri-info">
                   <span className="nutri-info-left">제품 영양 정보</span>
                   <span className="nutri-info-right">
                     Tall(톨) / 355ml(12 fl oz)
@@ -62,9 +63,9 @@ function Detail() {
 
               <p className="allergy">알레르기 유발 요인 : 우유</p>
 
-              <section>
-                <h4 className="detail-h4">리뷰</h4>
-                <div className="review">
+              <section className="review-section">
+                <h4 className="review-h4">리뷰</h4>
+                <div className="review-id-comment">
                   <p className="review-id">
                     coffee_lover
                     <span className="review-comment">너무 맛있어요!</span>

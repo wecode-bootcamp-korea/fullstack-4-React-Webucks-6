@@ -1,6 +1,6 @@
 $bg-color : #eeeeee;
 
-.detail-h1{
+.coffee-h1{
     font-size: 20px;
     font-weight: 600;
 }
@@ -12,7 +12,7 @@ $bg-color : #eeeeee;
     text-align: right;
 }
 
-.detail-section{
+.detail-article{
     display: flex;
     margin-top: 30px;
 
@@ -23,7 +23,7 @@ $bg-color : #eeeeee;
     }
 }
 
-.detail-content{
+.menu-section{
     position: relative;
     width: 100%;
 
@@ -35,13 +35,13 @@ $bg-color : #eeeeee;
         padding: 0 10px 10px 0;
         border-bottom: 2px solid black;
     
-        .detail-h2{
+        .menu-h2{
             margin-bottom: 5px;
             font-size: 20px;
             font-weight: 600;
         }
     
-        .detail-h3{
+        .menu-h3{
             font-size: 12px;
             font-weight: 350;
         }
@@ -52,7 +52,7 @@ $bg-color : #eeeeee;
         font-size: 15px;
     }
     
-    .nutrition{
+    .nutri-info{
         margin: 20px 0;
         padding: 20px 0;
         border-top: 2px solid $bg-color;
@@ -91,7 +91,7 @@ $bg-color : #eeeeee;
         background-color: $bg-color;
     }
     
-    .detail-h4{
+    .review-h4{
         padding-bottom: 5px;
         margin-bottom: 15px;
         border-bottom: 2px solid $bg-color;
@@ -99,7 +99,7 @@ $bg-color : #eeeeee;
         font-weight: 500;
     }
     
-    .review{
+    .review-id-comment{
         .review-id{
             width: 600px;
             padding: 4px 0;
