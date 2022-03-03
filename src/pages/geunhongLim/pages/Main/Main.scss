@@ -1,0 +1,80 @@
+a {
+  display: block;
+  color: gray;
+  text-decoration: none;
+}
+
+/* 전체스타일 끝 */
+div {
+  header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 3px 2px 3px;
+    background-color: #f4f4f2;
+
+    .logo {
+      width: 100px;
+    }
+
+    .menu-nav-bar {
+      align-self: center;
+
+      ul {
+        display: flex;
+        justify-content: space-around;
+        list-style: none;
+        font-size: 12px;
+
+        li {
+          margin: 0 1.5rem;
+          min-width: fit-content;
+        }
+      }
+    }
+  }
+
+  .coffee-title {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background-color: #f4f4f2;
+
+    * {
+      margin-left: 15px;
+      color: black;
+    }
+  }
+
+  .coffee-menu-list {
+    display: flex;
+    flex-flow: wrap row;
+
+    text-align: center;
+    margin-top: 30px;
+
+    li {
+      margin-left: 35px;
+      overflow: hidden;
+
+      .link {
+        width: 220px;
+        height: 220px;
+        overflow: hidden;
+      }
+      img {
+        width: 220px;
+        height: 220px;
+        object-fit: cover;
+        transition: all 0.5s;
+      }
+      img:hover {
+        transition: all 0.5s;
+        transform: scale(1.1);
+      }
+      p {
+        margin: 20px 0 30px 0px;
+      }
+    }
+  }
+}
