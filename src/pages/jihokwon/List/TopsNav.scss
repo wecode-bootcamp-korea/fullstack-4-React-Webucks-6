@@ -1,6 +1,6 @@
 $navbar-backgroundColor: #f6f5ee;
 $navbar-color: lightgray;
-$menu-fontsize: 8px;
+$menu-fontsize: 12px;
 $menufont: "Gowun Dodum", sans-serif;
 
 @mixin menu {
@@ -31,6 +31,8 @@ $menufont: "Gowun Dodum", sans-serif;
 
   li {
     cursor: pointer;
+    padding-right: 5px;
+    padding-top: 8px;
     font-size: $menu-fontsize;
   }
 }
