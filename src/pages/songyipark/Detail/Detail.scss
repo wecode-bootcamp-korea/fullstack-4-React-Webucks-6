@@ -1,5 +1,14 @@
 $bg-color : #eeeeee;
 
+.full-page {
+    display: flex;
+    justify-content: center;
+}
+  
+.container {
+    width: 70%;
+}
+  
 .coffee-h1{
     font-size: 20px;
     font-weight: 600;
@@ -15,7 +24,7 @@ $bg-color : #eeeeee;
 .detail-article{
     display: flex;
     margin-top: 30px;
-
+    
     .white-choco-img {
         width: 380px;
         height: 330px;
@@ -68,7 +77,6 @@ $bg-color : #eeeeee;
         }
     }
 
-    
     .kcal-table-grid{
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
