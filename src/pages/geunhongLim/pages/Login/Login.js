@@ -10,7 +10,7 @@ function Login() {
   return (
     <section className="login-box">
       <figure className="logo">
-        <img src="images/geunhongLim/logo.png" alt="logo" />
+        <img src="images/logo.png" alt="logo" />
       </figure>
       <form className="login-form-box">
         <input

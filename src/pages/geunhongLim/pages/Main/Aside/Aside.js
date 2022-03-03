@@ -4,7 +4,7 @@ function Aside() {
   return (
     <div>
       <header>
-        <img src="images/geunhongLim/logo.png" alt="logo" />
+        <img src="images/logo.png" alt="logo" />
 
         <nav>
           <ul className="nav-bar-list">

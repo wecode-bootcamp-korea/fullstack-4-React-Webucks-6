@@ -6,7 +6,7 @@ function Main() {
     <div>
       <header>
         <figure className="logo">
-          <img src="images/geunhongLim/logo.png" alt="logo" />
+          <img src="images/logo.png" alt="logo" />
         </figure>
         <nav className="menu-nav-bar">
           <ul>
