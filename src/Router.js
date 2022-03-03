@@ -37,9 +37,6 @@ function Router() {
         <Route path="/login-jeongminlee" element={<Loginjeongminlee />} />
         <Route path="/main-jeongminlee" element={<Mainjeongminlee />} />
         {/* 지호's router */}
-        <Route path="/login-jihokwon" element={<Loginjihokwon />} />
-        <Route path="/list-jihokwon" element={<Listjihokwon />} />
-        <Route path="/detail-jihokwon" element={<Detailjihokwon />} />
         <Route path="/login-minkyoungkim" element={<Loginminkyoungkim />} />
         <Route path="/main-minkyoungkim" element={<Mainminkyoungkim />} />ㅜ
         <Route path="/login-songyipark" element={<Loginsongyipark />} />
