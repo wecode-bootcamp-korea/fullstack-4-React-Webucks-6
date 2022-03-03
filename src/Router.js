@@ -26,6 +26,7 @@ import Detailjihokwon from "./pages/jihokwon/Detail/Detail";
 
 // 민경's 컴포넌트
 
+
 import Loginminkyoungkim from './pages/minkyoungkim/pages/Login/Login';
 import Mainminkyoungkim from './pages/minkyoungkim/pages/Main/Main';
 import Detailminkyoungkim from './pages/minkyoungkim/pages/Main/Detail/Detail';
