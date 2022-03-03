@@ -16,43 +16,43 @@ function List() {
                 </div>
                 <div className="menu">
                     <div className="explain">
-                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/jeongminlee/coffee.jpg" />
+                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/coffeeImg/1.jpg" />
                         <span className="coffee_name">카라멜 모카❤</span>
                     </div>
                     <div className="explain">
-                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/jeongminlee/coffee2.jpg" />
+                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/coffeeImg/2.jpg" />
                         <span className="coffee_name">나이트로 바닐라 크림❤</span>
                     </div>
                     <div className="explain">
-                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/jeongminlee/coffee3.jpg" />
+                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/coffeeImg/3.jpg" />
                         <span className="coffee_name">아이스 아메리카노❤</span>
                     </div>
                     <div className="explain">
-                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/jeongminlee/coffee4.jpg" />
+                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/coffeeImg/4.jpg" />
                         <span className="coffee_name">에스프레소❤</span>
                     </div>
                     <div className="explain">
-                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/jeongminlee/coffee5.jpg" />
+                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/coffeeImg/5.jpg" />
                         <span className="coffee_name">카페라떼❤</span>
                     </div>
                     <div className="explain">
-                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/jeongminlee/coffee6.jpg" />
+                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/coffeeImg/6.jpg" />
                         <span className="coffee_name">카푸치노❤</span>
                     </div>
                     <div className="explain">
-                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/jeongminlee/coffee7.jpg" />
+                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/coffeeImg/7.jpg" />
                         <span className="coffee_name">카페모카❤</span>
                     </div>
                     <div className="explain">
-                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/jeongminlee/coffee8.jpg" />
+                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/coffeeImg/8.jpg" />
                         <span className="coffee_name">카라멜 마끼아또❤</span>
                     </div>
                     <div className="explain">
-                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/jeongminlee/coffee9.jpg" />
+                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/coffeeImg/9.jpg" />
                         <span className="coffee_name">연유라떼❤</span>
                     </div>
                     <div className="explain">
-                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/jeongminlee/coffee10.jpg" />
+                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/coffeeImg/10.jpg" />
                         <span className="coffee_name">바닐라 라떼❤</span>
                     </div>
                 </div>
@@ -65,11 +65,11 @@ function List() {
                 </div>
                 <div className="menu2">
                     <div className="explain">
-                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/jeongminlee/coffee11.jpg" />
+                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/coffeeImg/11.jpg" />
                         <span className="coffee_name">블랙펄 카페라떼❤</span>
                     </div>
                     <div className="explain">
-                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/jeongminlee/coffee12.jpg" />
+                        <img className="cold_brew_coffee" alt="cold_brew_coffee" src="/images/coffeeImg/12.jpg" />
                         <span className="coffee_name">콜드브루 디카페인❤</span>
                     </div>
                     <div className="hidden">

@@ -1,4 +1,6 @@
 import './Detail.scss'
+import '../../../styles/reset.scss';
+import '../../../styles/common.scss';
 import TopNav from '../List/TopNav';
 
 function Detail() {
@@ -14,7 +16,7 @@ function Detail() {
                 </div>
                 <div className="picture_explain">
 
-                    <img alt="coffee" src="/images/jeongminlee/coffee12.jpg" />
+                    <img alt="coffee" src="/images/coffeeImg/1.jpg" />
 
                     <div className='right_detail'>
                         <div className="explain1">
