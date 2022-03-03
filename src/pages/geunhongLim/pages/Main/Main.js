@@ -1,5 +1,5 @@
 import './Main.scss';
-import { Link } from 'react-router-dom';
+import CoffeeCard from '../../components/CoffeeCard';
 
 function Main() {
   return (
@@ -26,7 +26,9 @@ function Main() {
             디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)
           </span>
         </article>
-        <figure>
+        <CoffeeCard />
+
+        {/* <figure>
           <ul className="coffee-menu-list">
             <li>
               <Link to="/aside-geunhongLim" className="link">
@@ -116,7 +118,7 @@ function Main() {
               <p>콜드 브루 오트 라떼</p>
             </li>
           </ul>
-        </figure>
+        </figure> */}
       </section>
       <section className="coffee-menu-section">
         <article className="coffee-title">
@@ -127,7 +129,7 @@ function Main() {
             디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)
           </span>
         </article>
-        <figure>
+        {/* <figure>
           <ul className="coffee-menu-list">
             <li>
               <Link to="/" className="link">
@@ -148,7 +150,7 @@ function Main() {
               <p>오늘의 커피</p>
             </li>
           </ul>
-        </figure>
+        </figure> */}
       </section>
     </div>
   );
