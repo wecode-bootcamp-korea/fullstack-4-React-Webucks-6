@@ -24,7 +24,8 @@ import Mainminkyoungkim from './pages/minkyoungkim/Main/Main';
 
 // 송이's 컴포넌트
 import Loginsongyipark from './pages/songyipark/Login/Login';
-import Mainsongyipark from './pages/songyipark/Main/Main';
+import Listsongyipark from './pages/songyipark/List/List';
+import Detailsongyipark from './pages/songyipark/Detail/Detail';
 
 function Router() {
   return (
@@ -46,8 +47,8 @@ function Router() {
         <Route path='/main-minkyoungkim' element={<Mainminkyoungkim />} />
 
         <Route path='/login-songyipark' element={<Loginsongyipark />} />
-        <Route path='/main-songyipark' element={<Mainsongyipark />} />
-        
+        <Route path='/list-songyipark' element={<Listsongyipark />} />
+        <Route path='/detail-songyipark' element={<Detailsongyipark />} />
       </Routes>
     </BrowserRouter>
   );
