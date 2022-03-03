@@ -1,12 +1,10 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 // 다송's 컴포넌트
 import Logindasongyu from './pages/dasongyu/Login/Login';
-import Listdasongyu from './pages/dasongyu/List/List';
-import Detaildasongyu from './pages/dasongyu/Detail/Detail';
-
+import Maindasongyu from './pages/dasongyu/Main/Main';
 
 // 근홍's 컴포넌트
 import LogingeunhongLim from './pages/geunhongLim/Login/Login';
@@ -33,8 +31,7 @@ function Router() {
     <BrowserRouter>
       <Routes>
         <Route path='/login-dasongyu' element={<Logindasongyu />} />
-        <Route path='/Detail-dasongyu' element={<Detaildasongyu />} />
-        <Route path='/List-dasongyu' element={<Listdasongyu />} />
+        <Route path='/main-dasongyu' element={<Maindasongyu />} />
 
         <Route path='/login-geunhongLim' element={<LogingeunhongLim />} />
         <Route path='/main-geunhongLim' element={<MaingeunhongLim />} />
