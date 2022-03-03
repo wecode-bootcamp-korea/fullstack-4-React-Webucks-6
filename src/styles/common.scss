@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+* {
+  box-sizing: border-box;
+}
+
+.full-page {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 70%;
+=======
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans+KR&display=swap');
 
 *{
@@ -6,4 +19,5 @@
     box-sizing: border-box;
     font-family: 'Noto Sans KR', sans-serif;
 
+>>>>>>> master
 }
