@@ -21,8 +21,9 @@ import Loginjihokwon from './pages/jihokwon/Login/Login';
 import Mainjihokwon from './pages/jihokwon/Main/Main';
 
 // 민경's 컴포넌트
-import Loginminkyoungkim from './pages/minkyoungkim/Login/Login';
-import Mainminkyoungkim from './pages/minkyoungkim/Main/Main';
+import Loginminkyoungkim from './pages/minkyoungkim/pages/Login/Login';
+import Mainminkyoungkim from './pages/minkyoungkim/pages/Main/Main';
+import Detailminkyoungkim from './pages/minkyoungkim/pages/Main/Detail/Detail';
 
 // 송이's 컴포넌트
 import Loginsongyipark from './pages/songyipark/Login/Login';
@@ -48,6 +49,8 @@ function Router() {
 
         <Route path='/login-minkyoungkim' element={<Loginminkyoungkim />} />
         <Route path='/main-minkyoungkim' element={<Mainminkyoungkim />} />
+        <Route path='/detail-minkyoungkim' element={<Detailminkyoungkim />} />
+        
 
         <Route path='/login-songyipark' element={<Loginsongyipark />} />
         <Route path='/list-songyipark' element={<Listsongyipark />} />
