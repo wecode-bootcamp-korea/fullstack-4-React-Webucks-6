@@ -1,0 +1,65 @@
+$font-size-smail: 7px;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin margin-padding {
+  margin: 5px;
+  padding: 10px;
+}
+
+@mixin border-sizing($color) {
+  border-radius: 5px;
+  border: 1px solid $color;
+}
+
+.container {
+  @include border-sizing(#e4e4e4);
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+}
+
+.loginArea {
+  @include flex-center;
+  flex-direction: column;
+  padding: 30px 80px;
+  margin: 0;
+
+  .title {
+    padding-left: 20px;
+
+    img {
+      width: 300px;
+      height: 200px;
+    }
+  }
+
+  input {
+    @include margin-padding;
+    @include border-sizing(lightgray);
+    display: flex;
+    background-color: #f7f7f7;
+    font-size: $font-size-smail;
+  }
+
+  button {
+    @include flex-center;
+    @include margin-padding;
+    @include border-sizing(white);
+    background-color: #add3ea;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+.find-password {
+  @include flex-center;
+  margin-top: 50px;
+  color: #3e98f2;
+  font-family: "Courier New", Courier, monospace;
+  font-size: $font-size-smail;
+  text-decoration: none;
+}
