@@ -1,0 +1,74 @@
+.body_Login{
+    display: flex;
+    justify-content: center;
+    // background-color: red;
+    // align-items: center;
+    // flex-direction: column;
+    // background-color: #eeefef;    
+}
+.picture_explain{
+    // border : 1px solid red;
+    // display: flex;
+    // justify-content: space-between;
+    // flex-wrap: wrap;
+}
+
+.high{
+    // border : 1px solid violet;
+    margin : 0 200px;
+}
+
+
+.logo_login{
+    margin-bottom: 30px;
+    font-family: 'Dancing Script', cursive;
+    font-size : 80px;
+    font-weight: bold;
+}
+
+.right_detail{
+    // border : 1px solid black;
+    margin-left : 20px;
+}
+
+input{
+    width : 340px;
+    border-radius: 6px;
+    padding-top : 9px;
+    padding-bottom : 9px;
+    background-color: #eeefef;
+    border : 2px rgba(168, 181, 189, 0.4) solid;
+}
+
+button{
+    width : 348px;
+    padding-top : 10px;
+    padding-bottom : 10px;
+    border-radius : 10px;
+    border: 0px solid;
+    background-color: rgba(97, 173, 237, 0.3);
+    color : white;
+}
+
+.basis{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top : 70px;
+    padding : 80px 0;
+    width: 450px;
+    background-color: white;
+    border : 1px solid black;
+}
+
+.basis > * {
+    margin-top : 15px;
+}
+
+.Find_Password{
+    margin-top: 15vh;
+    color : #6e9dba;
+    font-weight: bold;
+    font-size: 14px;
+}

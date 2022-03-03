@@ -5,6 +5,7 @@ import './styles/reset.scss'
 import './styles/common.scss'
 import './styles/variables.scss'
 
+
 ReactDOM.render(
   <React.StrictMode>
     <Router />
