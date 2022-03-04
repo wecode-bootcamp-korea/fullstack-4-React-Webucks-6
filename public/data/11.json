@@ -6,27 +6,27 @@
   "img": "images/coffeeimg/11.jpg",
   "nutritionInfo": [
     {
-      "name": "kal",
+      "name": "1회 제공량 (kcal)",
       "percent": 345
     },
     {
-      "name": "na",
+      "name": "나트륨 (mg)",
       "percent": "150"
     },
     {
-      "name": "saturatedFat",
+      "name": "포화지방 (g)",
       "percent": 11
     },
     {
-      "name": "sugar",
+      "name": "당류 (g)",
       "percent": 35
     },
     {
-      "name": "protein",
+      "name": "단백질 (g)",
       "percent": 11
     },
     {
-      "name": "caffeine",
+      "name": "카페인 (mg)",
       "percent": 75
     }
   ],
