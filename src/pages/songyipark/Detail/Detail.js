@@ -1,7 +1,7 @@
-import React from "react";
-import "./Detail.scss";
-import Nav from "../Component/Nav/Nav";
-import Footer from "../Component/Footer/Footer";
+import React from 'react';
+import './Detail.scss';
+import Nav from '../Component/Nav/Nav';
+import Footer from '../Component/Footer/Footer';
 
 function Detail() {
   return (
@@ -29,7 +29,7 @@ function Detail() {
                   <h2 className="menu-h2">화이트 초콜릿 모카</h2>
                   <h3 className="menu-h3">White Chocolate Mocha</h3>
                 </div>
-                <i className="far fa-heart"></i>
+                <i className="far fa-heart" />
               </header>
 
               <p className="menu-explain">
@@ -72,11 +72,16 @@ function Detail() {
                   </p>
                   <p className="review-id">
                     CHOCO7
-                    <span className="review-comment">오늘도 화이트 초콜릿 모카를 마시러 갑니다.</span>
+                    <span className="review-comment">
+                      오늘도 화이트 초콜릿 모카를 마시러 갑니다.
+                    </span>
                   </p>
                   <p className="review-id">
                     legend_dev
-                    <span className="review-comment">진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다.</span>
+                    <span className="review-comment">
+                      진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿
+                      모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다.
+                    </span>
                   </p>
                 </div>
               </section>

@@ -1,14 +1,18 @@
-import React from "react";
-import "./Login.scss";
-import { Link } from "react-router-dom";
+import React from 'react';
+import './Login.scss';
+import { Link } from 'react-router-dom';
 
 function Login() {
   function loginBtn() {}
 
   return (
     <div className="login-full-page">
-      <main className = "login-container">
-        <img className = "webucks-img" alt="webucks 로고" src="/images/songyipark/webucks.png" />
+      <main className="login-container">
+        <img
+          className="webucks-img"
+          alt="webucks 로고"
+          src="/images/songyipark/webucks.png"
+        />
         <article className="login-section">
           <input
             className="id"
