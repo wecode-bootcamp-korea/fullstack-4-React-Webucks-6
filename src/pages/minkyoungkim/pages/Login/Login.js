@@ -35,6 +35,7 @@ function Login() {
           로그인
         </button>
         <Link to="/signUp" className={styles.forgetPW}>
+          {' '}
           비밀번호를 잊으셨나요?
         </Link>
       </section>
