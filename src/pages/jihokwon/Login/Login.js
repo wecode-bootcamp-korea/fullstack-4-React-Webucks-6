@@ -10,14 +10,19 @@ function LoginComponent() {
   };
   return (
     <div>
-      <div className="container">
+      <div className="loginBox">
         <div className="loginArea">
-          <div className="title">
-            <img src="/images/jihokwon/images/WeBucks.png" alt="" />
+          <div className="login_title">
+            <img src="/images/logo.png" alt="" />
           </div>
-          <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
-          <input type="password" placeholder="비밀번호" />
-          <button onClick={goToList}>로그인</button>
+          <div className="inputAndBtn">
+            <input
+              type="text"
+              placeholder="전화번호, 사용자 이름 또는 이메일"
+            />
+            <input type="password" placeholder="비밀번호" />
+            <button onClick={goToList}>로그인</button>
+          </div>
           <Link to="/signup" className="find-password" href="">
             비밀번호를 잊으셨나요?
           </Link>

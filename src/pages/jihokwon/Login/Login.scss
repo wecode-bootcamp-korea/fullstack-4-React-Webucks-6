@@ -5,7 +5,7 @@ $font-size-smail: 7px;
   justify-content: center;
 }
 
-@mixin margin-padding {
+@mixin margin-padding-sizing {
   margin: 5px;
   padding: 10px;
 }
@@ -13,9 +13,10 @@ $font-size-smail: 7px;
 @mixin border-sizing($color) {
   border-radius: 5px;
   border: 1px solid $color;
+  background-color: white;
 }
 
-.container {
+.loginBox {
   @include border-sizing(#e4e4e4);
   width: 500px;
   height: 500px;
@@ -28,8 +29,9 @@ $font-size-smail: 7px;
   padding: 30px 80px;
   margin: 0;
 
-  .title {
-    padding-left: 20px;
+  .login_title {
+    padding-top: 10px;
+    padding-left: 15px;
 
     img {
       width: 300px;
@@ -38,20 +40,22 @@ $font-size-smail: 7px;
   }
 
   input {
-    @include margin-padding;
+    @include margin-padding-sizing;
     @include border-sizing(lightgray);
     display: flex;
     background-color: #f7f7f7;
     font-size: $font-size-smail;
   }
 
-  button {
-    @include flex-center;
-    @include margin-padding;
-    @include border-sizing(white);
-    background-color: #add3ea;
-    color: white;
-    cursor: pointer;
+  .inputAndBtn {
+    button {
+      @include flex-center;
+      @include margin-padding-sizing;
+      @include border-sizing(white);
+      background-color: #add3ea;
+      color: white;
+      cursor: pointer;
+    }
   }
 }
 
@@ -59,7 +63,7 @@ $font-size-smail: 7px;
   @include flex-center;
   margin-top: 50px;
   color: #3e98f2;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   font-size: $font-size-smail;
   text-decoration: none;
 }
