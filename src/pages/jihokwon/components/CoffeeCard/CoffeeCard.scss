@@ -1,0 +1,42 @@
+$prod-fontsize: 10px;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 15px;
+}
+
+@mixin list-style {
+  padding-top: 5px;
+  text-align: center;
+  font-size: $prod-fontsize;
+}
+
+@mixin imgs-size {
+  width: 200px;
+  height: 200px;
+}
+
+.coffee-list {
+  display: flex;
+  @include flex-center;
+  @include list-style;
+
+  li {
+    @include list-style;
+  }
+}
+
+.imgs img {
+  @include imgs-size;
+  transition: all 0.7s linear;
+}
+
+.imgs {
+  @include imgs-size;
+  overflow: hidden;
+}
+
+.imgs img:hover {
+  transform: scale(1.1);
+}

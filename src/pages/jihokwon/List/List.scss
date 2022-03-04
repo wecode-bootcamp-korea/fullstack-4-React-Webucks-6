@@ -28,13 +28,7 @@ $prod-fontsize: 10px;
 @mixin list-style {
   padding-right: 15px;
   text-align: center;
-  list-style: none;
   font-size: $prod-fontsize;
-}
-
-@mixin imgs-size {
-  width: 250px;
-  height: 250px;
 }
 
 section {
@@ -55,21 +49,6 @@ section {
   }
 }
 
-.list {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
-
-  ul {
-    @include flex-center;
-    @include list-style;
-
-    li {
-      @include li-flex;
-    }
-  }
-}
-
 .oneLine {
   display: flex;
   padding-top: 10px;
@@ -82,18 +61,4 @@ section {
   li {
     @include li-flex;
   }
-}
-
-.imgs img {
-  @include imgs-size;
-  transition: all 0.7s linear;
-}
-
-.imgs {
-  @include imgs-size;
-  overflow: hidden;
-}
-
-.imgs img:hover {
-  transform: scale(1.1);
 }

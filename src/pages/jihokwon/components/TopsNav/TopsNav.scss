@@ -3,10 +3,11 @@ $navbar-color: lightgray;
 $menu-fontsize: 12px;
 $menufont: 'Gowun Dodum', sans-serif;
 
+body {
+  padding: 0;
+}
 @mixin menu {
   display: flex;
-  margin: 0;
-  padding-top: 15px;
   list-style: none;
 }
 
@@ -14,11 +15,11 @@ $menufont: 'Gowun Dodum', sans-serif;
   display: flex;
   justify-content: space-between;
   margin: 15px;
-  padding-bottom: 15px;
+  padding: 10px;
   background-color: $navbar-backgroundColor;
 
-  div {
-    padding-top: 17px;
+  .navbar_logo {
+    padding-top: 30px;
   }
 }
 
@@ -32,7 +33,7 @@ $menufont: 'Gowun Dodum', sans-serif;
   li {
     cursor: pointer;
     padding-right: 5px;
-    padding-top: 8px;
+    padding-top: 10px;
     font-size: $menu-fontsize;
   }
 }

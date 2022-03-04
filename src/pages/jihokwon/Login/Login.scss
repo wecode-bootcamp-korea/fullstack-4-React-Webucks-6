@@ -38,6 +38,12 @@ $font-size-smail: 7px;
       height: 200px;
     }
   }
+}
+
+.inputAndBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   input {
     @include margin-padding-sizing;
@@ -47,15 +53,13 @@ $font-size-smail: 7px;
     font-size: $font-size-smail;
   }
 
-  .inputAndBtn {
-    button {
-      @include flex-center;
-      @include margin-padding-sizing;
-      @include border-sizing(white);
-      background-color: #add3ea;
-      color: white;
-      cursor: pointer;
-    }
+  button {
+    @include flex-center;
+    @include margin-padding-sizing;
+    @include border-sizing(white);
+    background-color: #add3ea;
+    color: white;
+    cursor: pointer;
   }
 }
 
