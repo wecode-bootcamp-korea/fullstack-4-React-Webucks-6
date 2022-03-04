@@ -1,12 +1,25 @@
-import React from "react";
-import "./Detail.scss";
-import Nav from "../Component/Nav/Nav";
-import Footer from "../Component/Footer/Footer";
+import React, { useEffect, useState } from 'react';
+import './Detail.scss';
+import Nav from '../Component/Nav/Nav';
+import Footer from '../Component/Footer/Footer';
 
 function Detail() {
   return (
-    <div className="full-page">
-      <div className="container">
+    // const [coffeeDetail, setCoffeeDetail] = useState({
+    //   "id": 0,
+    //   "name": "",
+    //   "engName": "",
+    //   "description": "",
+    //   "img": "/normal.jpg",
+    //   "nutritionInfo": [],
+    //   "allergy": "",
+    //   "review": [],
+    // });
+
+    // useEffect
+
+    <div className="detail-full-page">
+      <div className="detail-container">
         <Nav />
         <main>
           <header>
@@ -16,7 +29,7 @@ function Detail() {
             </div>
           </header>
 
-          <article className="detail-article">
+          <article className="detail-article-wrapper">
             <img
               className="white-choco-img"
               alt="화이트 초콜릿 모카 사진"
@@ -72,11 +85,16 @@ function Detail() {
                   </p>
                   <p className="review-id">
                     CHOCO7
-                    <span className="review-comment">오늘도 화이트 초콜릿 모카를 마시러 갑니다.</span>
+                    <span className="review-comment">
+                      오늘도 화이트 초콜릿 모카를 마시러 갑니다.
+                    </span>
                   </p>
                   <p className="review-id">
                     legend_dev
-                    <span className="review-comment">진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다.</span>
+                    <span className="review-comment">
+                      진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿
+                      모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다.
+                    </span>
                   </p>
                 </div>
               </section>
