@@ -1,6 +1,6 @@
 import React from 'react';
 import './List.scss';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import Nav from '../Component/Nav/Nav';
 import CoffeeCard from './CoffeeCard';
 
@@ -107,7 +107,8 @@ function List() {
               &nbsp; 디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)
             </span>
           </h1>
-          {/* <section className="coffee-menu-list">
+        </div>
+        {/* <section className="coffee-menu-list">
             <div>
               <img
                 className="coffee-img"
@@ -125,7 +126,6 @@ function List() {
               <div>아이스 커피</div>
             </div>
           </section> */}
-        </div>
       </div>
     </div>
   );

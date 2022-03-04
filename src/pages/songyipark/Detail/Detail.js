@@ -15,7 +15,6 @@ function Detail() {
     //   "allergy": "",
     //   "review": [],
     // });
-
     // useEffect
 
     <div className="detail-full-page">
@@ -43,7 +42,7 @@ function Detail() {
                   <h2 className="menu-h2">화이트 초콜릿 모카</h2>
                   <h3 className="menu-h3">White Chocolate Mocha</h3>
                 </div>
-                <i className="far fa-heart"></i>
+                <i className="far fa-heart" />
               </header>
 
               <p className="menu-explain">
