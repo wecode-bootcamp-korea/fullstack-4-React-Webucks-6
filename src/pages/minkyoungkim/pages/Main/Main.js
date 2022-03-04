@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Main.module.scss';
 import TopNav from '../../components/TopNav/TopNav';
-import { useNavigate } from 'react-router-dom';
+import CoffeeCard from '../Main/CoffeeCard/CoffeeCard';
 
 function Main() {
   const [lists, setLists] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:3000/data/listData.json', {
@@ -26,18 +25,39 @@ function Main() {
           <span>☕️</span>
           <p>디카페인 에스포레소 샷 추가 가능 (일부 음료 제외)</p>
         </article>
-        <div className={styles.coffeeContents}>
-          {lists.slice(10, 12).map(list => {
+        <article className={styles.coffeeContents}>
+          {lists.slice(0, 10).map(list => {
             return (
-              <div className={styles.coffeeItem} key={list.id}>
-                <div className={styles.coffeeImgbox}>
-                  <img alt={list.name} src={`/${list.image}`} />
-                </div>
-                <p className={styles.coffeeName}>{list.name} ♡</p>
-              </div>
+              <CoffeeCard
+                key={list.id}
+                list={list}
+                onClick={() => {
+                  // navigate(`/detail-minkyoungkim/${list.id}}`);
+                }}
+              />
             );
           })}
-        </div>
+        </article>
+      </section>
+      <section className={styles.coffeeSection}>
+        <article className={styles.titleBox}>
+          <h2>브루드 커피</h2>
+          <span>☕️</span>
+          <p>디카페인 에스포레소 샷 추가 가능 (일부 음료 제외)</p>
+        </article>
+        <article className={styles.coffeeContents}>
+          {lists.slice(10, 12).map(list => {
+            return (
+              <CoffeeCard
+                key={list.id}
+                list={list}
+                onClick={() => {
+                  // navigate(`/detail-minkyoungkim/${list.id}}`);
+                }}
+              />
+            );
+          })}
+        </article>
       </section>
     </div>
   );

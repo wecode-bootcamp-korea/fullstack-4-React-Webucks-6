@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 
 function Detail() {
   const params = useParams();
+  console.log(params.id);
   const [details, setDetails] = useState({
     id: 0,
     name: '',
@@ -27,13 +28,14 @@ function Detail() {
       });
   }, []);
 
+  console.log(details);
   return (
     <>
       <div className={styles.container}>
         <TopNav />
         <section className={styles.contents}>
           <article className={styles.imageBox}>
-            <img src="/images/coffeeImg/1.jpg" alt="coffee" />
+            <img src={`/${details.img}`} alt={details.name} />
           </article>
           <aside className={styles.details}>
             <div className={styles.coffeeTitle}>
