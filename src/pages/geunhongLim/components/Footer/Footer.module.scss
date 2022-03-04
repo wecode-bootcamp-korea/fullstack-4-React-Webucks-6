@@ -1,0 +1,19 @@
+.footerWrap {
+  display: flex;
+  margin: 0;
+  padding: 50px;
+  background-color: #333333;
+  font-size: 13px;
+  ul {
+    display: block;
+    margin: 10px auto;
+    padding: 0;
+    color: #f4f4f2;
+    li:first-child {
+      padding-top: 10px;
+    }
+    li {
+      padding: 5px 0;
+    }
+  }
+}

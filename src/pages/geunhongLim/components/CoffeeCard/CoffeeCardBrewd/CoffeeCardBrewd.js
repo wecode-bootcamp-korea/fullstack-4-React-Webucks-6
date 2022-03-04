@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import styles from '../CoffeeCard.module.scss';
 
 function CoffeeCard() {
   const [coffeeData, setCoffeeData] = useState([{}]);
@@ -15,18 +16,18 @@ function CoffeeCard() {
       .then(res => setCoffeeData(res));
   }, []);
 
-  console.log(coffeeData);
-
   return (
-    <ul className="coffee-menu-list">
-      {coffeeData.map(data => (
-        <li>
-          <div className="coffee-image-wrap">
-            <img src={data.image} alt={data.name} />
-          </div>
-          <p>{data.name}</p>
-        </li>
-      ))}
+    <ul className={styles.coffeeMenuList}>
+      {coffeeData.map(data =>
+        data.id >= 11 ? (
+          <li>
+            <div className={styles.coffeeImageWrap}>
+              <img src={data.image} alt={data.name} />
+            </div>
+            <p>{data.name}</p>
+          </li>
+        ) : null
+      )}
     </ul>
   );
 }

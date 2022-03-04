@@ -1,0 +1,30 @@
+.headerWrap {
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 3px 2px 3px;
+  background-color: #f4f4f2;
+
+  .logo {
+    width: 100px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .menuNavBar {
+    align-self: center;
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      font-size: 12px;
+
+      li {
+        margin: 0 1.5rem;
+        min-width: fit-content;
+      }
+    }
+  }
+}

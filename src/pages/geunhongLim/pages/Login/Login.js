@@ -1,4 +1,4 @@
-import './Login.scss';
+import styles from './Login.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
@@ -8,21 +8,13 @@ function Login() {
     navigate('/main-geunhongLim');
   };
   return (
-    <section className="login-box">
-      <figure className="logo">
+    <section className={styles.loginBox}>
+      <figure className={styles.logo}>
         <img src="images/logo.png" alt="logo" />
       </figure>
-      <form className="login-form-box">
-        <input
-          type="text"
-          className="login-id-input"
-          placeholder="전화번호, 사용자 이름 또는 이메일"
-        />
-        <input
-          type="password"
-          className="login-password-input"
-          placeholder="비밀번호"
-        />
+      <form className={styles.loginFormBox}>
+        <input type="text" placeholder="전화번호, 사용자 이름 또는 이메일" />
+        <input type="password" placeholder="비밀번호" />
         <button
           onClick={() => {
             goToList();
@@ -31,7 +23,7 @@ function Login() {
           로그인
         </button>
       </form>
-      <div className="lost-password-box">
+      <div className={styles.lostPasswordBox}>
         <Link to="/">비밀번호를 잊으셨나요?</Link>
       </div>
     </section>

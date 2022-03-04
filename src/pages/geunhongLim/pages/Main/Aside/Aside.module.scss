@@ -1,28 +1,4 @@
 div {
-  ul {
-    display: flex;
-    flex-flow: row wrap;
-    list-style: none;
-    color: gray;
-  }
-
-  header {
-    width: 1100px;
-    margin: auto;
-    img {
-      max-width: 110px;
-    }
-    nav {
-      align-self: center;
-
-      li {
-        margin: 0 10px;
-        width: max-content;
-        font-size: 15px;
-      }
-    }
-  }
-
   section {
     width: 1100px;
     margin: auto;
@@ -32,7 +8,8 @@ div {
       font-size: 20px;
       font-weight: bold;
     }
-    .link-path-list {
+    .linkPathList {
+      display: flex;
       justify-content: right;
       font-size: 12px;
 
@@ -42,7 +19,7 @@ div {
     }
   }
 
-  .menu-detail-article {
+  .menuDetailArticle {
     margin-top: 20px;
     clear: right;
     display: flex;
@@ -53,10 +30,11 @@ div {
       margin-right: 40px;
     }
     table {
+      display: block;
       text-align: left;
       border-collapse: collapse;
 
-      .menu-name {
+      .menuName {
         width: 100%;
 
         th {
@@ -81,7 +59,7 @@ div {
         }
       }
 
-      .td-title {
+      .tdTitle {
         padding: 25px 0;
         border-bottom: 1px solid rgba(0, 0, 0, 0.507);
         div {
@@ -90,35 +68,35 @@ div {
           font-size: 20px;
         }
       }
-      .menu-de {
+      .menuDe {
         border-top: 3px solid black;
         border-bottom: 1px solid black;
       }
     }
 
-    .detail-de-row {
+    .detailDeRow {
       td {
         padding-top: 10px;
         padding-bottom: 10px;
         width: 25%;
         font-size: 12px;
       }
-      .detail-table-second {
+      .detailTableSecond {
         text-align: right;
         padding-right: 10px;
         border-right: 1px solid black;
       }
-      .detail-table-second + td {
+      .detailTableSecond + td {
         padding-left: 10px;
         padding-right: 10px;
       }
-      .detail-table-second + td + td {
+      .detailTableSecond + td + td {
         text-align: right;
         padding-right: 10px;
       }
     }
   }
-  .menu-al {
+  .menuAl {
     margin: 20px 0;
     padding: 10px 10px;
     background-color: #efefef;
@@ -129,7 +107,7 @@ div {
       border-bottom: 1px solid black;
       font-size: 20px;
     }
-    .user-id {
+    .userId {
       font-weight: bold;
     }
 
@@ -144,26 +122,6 @@ div {
       padding: 10px;
       width: 95%;
       background-color: #f4f4f2;
-    }
-  }
-
-  footer {
-    display: flex;
-    margin: 0;
-    padding: 50px;
-    background-color: #333333;
-    font-size: 13px;
-    ul {
-      display: block;
-      margin: 10px auto;
-      padding: 0;
-      color: #f4f4f2;
-      li:first-child {
-        padding-top: 10px;
-      }
-      li {
-        padding: 5px 0;
-      }
     }
   }
 }
