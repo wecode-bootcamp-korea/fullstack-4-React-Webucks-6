@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CoffeeCard from './Card';
 // import styles from './Detail.modules.scss';
+
 import './List.scss';
 import TopsNav from './TopsNav';
 
