@@ -34,7 +34,7 @@ function Aside() {
                   </th>
                   <td className={styles.heart}>
                     <button>
-                      <i className="fa-solid fa-heart"></i>
+                      <i className="fa-solid fa-heart" />
                     </button>
                   </td>
                 </tr>

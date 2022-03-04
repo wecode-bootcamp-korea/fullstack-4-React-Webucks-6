@@ -1,6 +1,6 @@
-import React from "react";
-import "./List.scss";
-import TopsNav from "./TopsNav";
+import React from 'react';
+import './List.scss';
+import TopsNav from './TopsNav';
 
 function ListComponent() {
   return (
