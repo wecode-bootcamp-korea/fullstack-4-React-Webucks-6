@@ -1,18 +1,12 @@
 import React from 'react';
 import './List.scss';
+import TopNav from '../components/Nav/TopNav/TopNav';
 
 function ListComponent() {
   return (
     <div>
-      <div className="nav-bar">
-        <h1>WeBucks</h1>
-        <div className="nav">
-          <span>COFFEE </span>
-          <span>MENU</span>
-          <span>STORE</span>
-          <span>WHAT'S NEW</span>
-        </div>
-      </div>
+      <TopNav />
+
       <div className="menu-bar">
         <h3>콜드 브루 커피</h3>
         <img src="#" />

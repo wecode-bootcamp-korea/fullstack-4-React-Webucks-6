@@ -1,22 +1,12 @@
 import React from 'react';
 import './Detail.scss';
-import { Link } from 'react-router-dom';
+import TopNav from '../components/Nav/TopNav/TopNav';
 
 function DetailComponent() {
   return (
     <>
       <div className="box">
-        <div className="nav-bar">
-          <h1>WeBucks</h1>
-          <div className="nav">
-            <span>COFFEE </span>
-            <span>
-              <Link to="/list-dasongyu">MENU</Link>
-            </span>
-            <span>STORE</span>
-            <span>WHAT'S NEW</span>
-          </div>
-        </div>
+        <TopNav />
 
         <h2>콜드 브루</h2>
 
