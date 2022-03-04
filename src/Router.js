@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 // 다송's 컴포넌트
@@ -17,7 +16,6 @@ import AsidegeunhongLim from './pages/geunhongLim/pages/Main/Aside/Aside';
 import Loginjeongminlee from './pages/jeongminlee/Login/Login';
 import Detailjeongminlee from './pages/jeongminlee/Detail/Detail';
 import Listjeongminlee from './pages/jeongminlee/List/List';
-import Mainjeongminlee from './pages/jeongminlee/Main/Main';
 
 // 지호's 컴포넌트
 import Loginjihokwon from './pages/jihokwon/Login/Login';
@@ -25,7 +23,6 @@ import Listjihokwon from './pages/jihokwon/List/List';
 import Detailjihokwon from './pages/jihokwon/Detail/Detail';
 
 // 민경's 컴포넌트
-
 import Loginminkyoungkim from './pages/minkyoungkim/pages/Login/Login';
 import Mainminkyoungkim from './pages/minkyoungkim/pages/Main/Main';
 import Detailminkyoungkim from './pages/minkyoungkim/pages/Main/Detail/Detail';
@@ -50,7 +47,6 @@ function Router() {
         <Route path="/login-jeongminlee" element={<Loginjeongminlee />} />
         <Route path="/detail-jeongminlee" element={<Detailjeongminlee />} />
         <Route path="/list-jeongminlee" element={<Listjeongminlee />} />
-        <Route path="/main-jeongminlee" element={<Mainjeongminlee />} />
 
         <Route path="/login-jihokwon" element={<Loginjihokwon />} />
         <Route path="/list-jihokwon" element={<Listjihokwon />} />
