@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Main.module.scss';
 import TopNav from '../../components/TopNav/TopNav';
+import { useNavigate } from 'react-router-dom';
 
 function Main() {
   const [lists, setLists] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('http://localhost:3000/data/listData.json', {
@@ -27,9 +29,15 @@ function Main() {
         <article className={styles.coffeeContents}>
           {lists.slice(0, 10).map(list => {
             return (
-              <div className={styles.coffeeItem} key={list.id}>
+              <div
+                onClick={() => {
+                  navigate(`/detail-minkyoungkim/:${list.id}`);
+                }}
+                className={styles.coffeeItem}
+                key={list.id}
+              >
                 <div className={styles.coffeeImgbox}>
-                  <img alt={list.name} src={list.image} />
+                  <img alt={list.name} src={`/${list.image}`} />
                 </div>
                 <p className={styles.coffeeName}>{list.name} ♡</p>
               </div>
@@ -54,7 +62,7 @@ function Main() {
             return (
               <div className={styles.coffeeItem} key={list.id}>
                 <div className={styles.coffeeImgbox}>
-                  <img alt={list.name} src={list.image} />
+                  <img alt={list.name} src={`/${list.image}`} />
                 </div>
                 <p className={styles.coffeeName}>{list.name} ♡</p>
               </div>

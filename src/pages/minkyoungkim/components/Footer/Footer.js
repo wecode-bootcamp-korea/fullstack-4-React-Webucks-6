@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from '../Footer/Footer.scss';
+import styles from '../Footer/Footer.module.scss';
 
 function Footer() {
   return (
-    <footer class={styles.footer}>
+    <footer className={styles.footer}>
       <ul>
         COMPANY
         <li>한눈에 보기</li>
