@@ -1,4 +1,4 @@
-import "./Aside.scss";
+import './Aside.scss';
 
 function Aside() {
   return (
@@ -47,7 +47,7 @@ function Aside() {
                   </th>
                   <td className="heart">
                     <button>
-                      <i className="fa-solid fa-heart"></i>
+                      <i className="fa-solid fa-heart" />
                     </button>
                   </td>
                 </tr>
