@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './List.scss';
 import { Link } from 'react-router-dom';
 import Nav from '../Component/Nav/Nav';
+import CoffeeCard from './CoffeeCard';
 
 function List() {
-  const [coffeeList, setCoffeeList] = useState([]);
-
-  useEffect(() => {
-    fetch('/data/listData.json')
-      .then(res => res.json())
-      .then(data => {
-        console.log(data);
-      });
-  }, []);
-
   return (
     <div className="full-page">
       <div className="container">
@@ -25,7 +16,8 @@ function List() {
               &nbsp; 디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)
             </span>
           </h1>
-          <section className="coffee-menu-list">
+          <CoffeeCard />
+          {/* <section className="coffee-menu-list">
             <div>
               <Link to="/detail-songyipark">
                 <img
@@ -108,14 +100,14 @@ function List() {
               />
               <div>돌체 콜드 브루</div>
             </div>
-          </section>
+          </section>*/}
           <h1 className="coffee-category">
             브루드 커피 &nbsp; <i className="fas fa-mug-hot"></i>
             <span>
               &nbsp; 디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)
             </span>
           </h1>
-          <section className="coffee-menu-list">
+          {/* <section className="coffee-menu-list">
             <div>
               <img
                 className="coffee-img"
@@ -132,7 +124,7 @@ function List() {
               />
               <div>아이스 커피</div>
             </div>
-          </section>
+          </section> */}
         </div>
       </div>
     </div>

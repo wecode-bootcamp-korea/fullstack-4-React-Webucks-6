@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import './Detail.scss';
 import Nav from '../Component/Nav/Nav';
 import Footer from '../Component/Footer/Footer';
@@ -10,7 +10,7 @@ function Detail() {
     //   "name": "",
     //   "engName": "",
     //   "description": "",
-    //   "img": "/normal.jpg",
+    //   "img": "images/coffeeImg/1.jpg",
     //   "nutritionInfo": [],
     //   "allergy": "",
     //   "review": [],
@@ -25,7 +25,8 @@ function Detail() {
           <header>
             <h1 className="coffee-h1">콜드 브루</h1>
             <div className="coffee-classify">
-              홈 > MENU > 음료 > 에스프레소 > 화이트 초콜릿 모카
+              홈 {'>'} MENU {'>'} 음료 {'>'} 에스프레소 {'>'} 화이트 초콜릿
+              모카;
             </div>
           </header>
 

@@ -1,22 +1,22 @@
 .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0;
+  padding: 18px 20px;
+  background-color: #efebe9;
+
+  .logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+  }
+
+  .nav-bar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin : 30px 0;
-    padding: 18px 20px;
-    background-color: #efebe9;
-  
-    .logo{
-      font-family: 'Dancing Script', cursive;
-      font-size: 25px;
-    }
-  
-    .nav-bar{
-      display: flex;
-      color: gray;
-  
-      div {
-        padding-left : 20px;
-      }
+    color: gray;
+
+    div {
+      padding-left: 20px;
     }
   }
+}
