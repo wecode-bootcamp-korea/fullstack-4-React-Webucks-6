@@ -1,0 +1,12 @@
+[
+  {
+    "id": 11,
+    "name": "아이스 커피",
+    "image": "images/coffeeimg/11.jpg"
+  },
+  {
+    "id": 12,
+    "name": "오늘의 커피",
+    "image": "images/coffeeimg/12.jpg"
+  }
+]
