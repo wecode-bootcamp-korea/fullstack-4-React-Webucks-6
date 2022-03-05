@@ -31,7 +31,7 @@ $prod-fontsize: 10px;
   font-size: $prod-fontsize;
 }
 
-section {
+.jiho_section {
   font-family: $font;
 }
 
@@ -52,18 +52,4 @@ section {
 .coffee-list {
   display: flex;
   flex-wrap: wrap;
-}
-
-.oneLine {
-  display: flex;
-  padding-top: 10px;
-
-  ul {
-    @include flex-center;
-    @include list-style;
-  }
-
-  li {
-    @include li-flex;
-  }
 }

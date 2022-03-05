@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.scss';
 
 function LoginComponent() {
+  const [idValue, setIdValue] = useState('');
+  const [pwValue, setPwValue] = useState('');
+
+  function handleIdInput(event) {
+    setIdValue(event.target.value);
+  }
+  function handlePwInput(event) {
+    setPwValue(event.target.value);
+  }
+
   const navigate = useNavigate();
 
   const goToList = () => {
@@ -17,11 +27,22 @@ function LoginComponent() {
           </div>
           <div className="inputAndBtn">
             <input
+              className="loginArea_input"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
+              value={idValue}
+              onChange={handleIdInput}
             />
-            <input type="password" placeholder="비밀번호" />
-            <button onClick={goToList}>로그인</button>
+            <input
+              className="loginArea_input"
+              type="password"
+              placeholder="비밀번호"
+              value={pwValue}
+              onChange={handlePwInput}
+            />
+            <button className="loginArea_btn" onClick={goToList}>
+              로그인
+            </button>
           </div>
           <Link to="/signup" className="find-password" href="">
             비밀번호를 잊으셨나요?

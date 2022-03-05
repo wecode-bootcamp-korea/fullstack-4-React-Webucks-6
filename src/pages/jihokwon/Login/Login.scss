@@ -45,7 +45,7 @@ $font-size-smail: 7px;
   flex-direction: column;
   justify-content: center;
 
-  input {
+  .loginArea_input {
     @include margin-padding-sizing;
     @include border-sizing(lightgray);
     display: flex;
@@ -53,7 +53,7 @@ $font-size-smail: 7px;
     font-size: $font-size-smail;
   }
 
-  button {
+  .loginArea_btn {
     @include flex-center;
     @include margin-padding-sizing;
     @include border-sizing(white);

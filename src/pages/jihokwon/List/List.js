@@ -25,7 +25,7 @@ function ListComponent() {
   return (
     <div>
       <TopsNav />
-      <section>
+      <section className="jiho_section">
         <ul className="menubar">
           <li>
             <p>콜드 브루 커피 ☕️ </p>
