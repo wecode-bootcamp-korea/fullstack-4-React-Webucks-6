@@ -1,5 +1,5 @@
 import styles from './Detail.scss';
-import Nav from '../../components/TopNav/Nav';
+import Nav from '../../components/TopNav/TopNav';
 import Footer from '../../components/Footer/Footer';
 
 function Aside() {
