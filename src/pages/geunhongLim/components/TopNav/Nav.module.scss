@@ -4,9 +4,9 @@
   padding: 2px 3px 2px 3px;
   background-color: #f4f4f2;
 
-  .logo {
+  .ghLogo {
     width: 100px;
-    img {
+    .ghImg {
       width: 100%;
       height: auto;
     }
@@ -15,7 +15,7 @@
   .menuNavBar {
     align-self: center;
 
-    ul {
+    .ghUl {
       display: flex;
       justify-content: space-around;
       list-style: none;
