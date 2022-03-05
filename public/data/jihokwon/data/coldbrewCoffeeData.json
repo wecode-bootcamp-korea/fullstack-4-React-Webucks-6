@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "나이트로 바닐라 크림",
+    "image": "images/jihokwon/images/coffee.jpg"
+  },
+  {
+    "id": 2,
+    "name": "나이트로 콜드 브루",
+    "image": "images/jihokwon/images/nightColdBrew.jpg"
+  },
+  {
+    "id": 3,
+    "name": "돌체 콜드 브루",
+    "image": "images/jihokwon/images/coldbrewlatte.jpg"
+  },
+  {
+    "id": 4,
+    "name": "바닐라 크림 콜드 브루",
+    "image": "images/jihokwon/images/vanilaCream.jpg"
+  },
+  {
+    "id": 5,
+    "name": "벨벳 다크 모카 나이트로",
+    "image": "images/jihokwon/images/moca.jpg"
+  },
+  {
+    "id": 6,
+    "name": "시그니처 더 블랙 콜드 브루",
+    "image": "images/jihokwon/images/theblack.jpg"
+  },
+  {
+    "id": 7,
+    "name": "제주 비자림 콜드 브루",
+    "image": "images/jihokwon/images/icecreamcoffee.jpg"
+  },
+  {
+    "id": 8,
+    "name": "콜드 브루",
+    "image": "images/jihokwon/images/coldbrew.jpg"
+  },
+  {
+    "id": 9,
+    "name": "콜드 브루 몰트",
+    "image": "images/jihokwon/images/molt.jpg"
+  },
+  {
+    "id": 10,
+    "name": "콜드 브루 오트 라떼",
+    "image": "images/jihokwon/images/latte.jpg"
+  }
+]

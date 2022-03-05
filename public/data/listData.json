@@ -48,15 +48,5 @@
     "id": 10,
     "name": "콜드 브루 오트 라떼",
     "image": "images/coffeeimg/10.jpg"
-  },
-  {
-    "id": 11,
-    "name": "아이스 커피",
-    "image": "images/coffeeimg/11.jpg"
-  },
-  {
-    "id": 12,
-    "name": "오늘의 커피",
-    "image": "images/coffeeimg/12.jpg"
   }
 ]

@@ -1,29 +1,18 @@
 $prod-fontsize: 10px;
 
-@mixin flex-center {
-  display: flex;
-  justify-content: space-between;
-  padding-left: 15px;
-}
-
-@mixin list-style {
-  padding-top: 5px;
-  text-align: center;
-  font-size: $prod-fontsize;
-}
-
 @mixin imgs-size {
-  width: 200px;
-  height: 200px;
+  width: 165px;
+  height: 165px;
 }
 
-.coffee-list {
+.card {
   display: flex;
-  @include flex-center;
-  @include list-style;
+  padding-left: 15px;
+  font-size: $prod-fontsize;
 
   li {
-    @include list-style;
+    padding: 5px;
+    text-align: center;
   }
 }
 

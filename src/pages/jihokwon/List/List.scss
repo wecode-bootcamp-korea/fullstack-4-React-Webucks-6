@@ -49,6 +49,11 @@ section {
   }
 }
 
+.coffee-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .oneLine {
   display: flex;
   padding-top: 10px;
