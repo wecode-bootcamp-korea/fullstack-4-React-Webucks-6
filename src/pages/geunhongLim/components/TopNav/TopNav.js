@@ -1,11 +1,11 @@
-import styles from './Nav.module.scss';
+import styles from './Nav.scss';
 
 function Nav() {
   return (
     <header>
       <div className={styles.headerWrap}>
         <figure className={styles.logo}>
-          <img src="images/logo.png" alt="logo"></img>
+          <img src="images/logo.png" alt="logo" />
         </figure>
         <nav className={styles.menuNavBar}>
           <ul>

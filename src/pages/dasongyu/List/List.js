@@ -7,7 +7,7 @@ function ListComponent() {
     <div>
       <TopNav />
 
-      <div className="menu-bar">
+      {/* <div className="menu-bar">
         <h3>콜드 브루 커피</h3>
         <img src="#" />
       </div>
@@ -96,7 +96,7 @@ function ListComponent() {
             <p>나이트로 바닐라 크림 ♡</p>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import Nav from '../../components/Nav/Nav';
+import Nav from '../../components/TopNav/TopNav';
 import CoffeeCardCold from '../../components/CoffeeCard/CoffeeCardCold/CoffeeCardCold';
 import CoffeeCardBrewd from '../../components/CoffeeCard/CoffeeCardBrewd/CoffeeCardBrewd';
 import styles from './Main.module.scss';
@@ -11,7 +11,7 @@ function Main() {
       <section className="coffee-menu-section">
         <article className={styles.coffeeTitle}>
           <h3>콜드 브루 커피</h3>
-          <i className="fa-solid fa-mug-hot"></i>
+          <i className="fa-solid fa-mug-hot" />
           <span className="option-explan">
             디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)
           </span>
@@ -21,7 +21,7 @@ function Main() {
       <section className="coffee-menu-section">
         <article className={styles.coffeeTitle}>
           <h3>브루드 커피</h3>
-          <i className="fa-solid fa-mug-hot"></i>
+          <i className="fa-solid fa-mug-hot" />
           <span className="option-explan">
             디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)
           </span>

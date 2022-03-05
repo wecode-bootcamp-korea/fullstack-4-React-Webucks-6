@@ -18,7 +18,7 @@ function DetailComponent() {
 
         <div className="info-box">
           <span className="coffee-img">
-            <img src="./images/coffee.jpg" />
+            {/* <img src="./images/coffee.jpg" /> */}
           </span>
 
           <div className="text-box">

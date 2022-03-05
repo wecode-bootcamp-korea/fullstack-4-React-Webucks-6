@@ -9,8 +9,8 @@ import Detaildasongyu from './pages/dasongyu/Detail/Detail';
 
 // 근홍's 컴포넌트
 import LogingeunhongLim from './pages/geunhongLim/pages/Login/Login';
-import MaingeunhongLim from './pages/geunhongLim/pages/Main/Main';
-import AsidegeunhongLim from './pages/geunhongLim/pages/Main/Aside/Aside';
+import MaingeunhongLim from './pages/geunhongLim/pages/List/Main';
+import AsidegeunhongLim from './pages/geunhongLim/pages/Detail/Aside';
 
 // 정민's 컴포넌트
 import Loginjeongminlee from './pages/jeongminlee/Login/Login';

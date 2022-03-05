@@ -22,7 +22,7 @@ function Aside() {
 
         <article className={styles.menuDetailArticle}>
           <figure>
-            <img src="images/coffeeimg/1.jpg" alt="나이트로 바닐라 크림"></img>
+            <img src="images/coffeeimg/1.jpg" alt="나이트로 바닐라 크림" />
           </figure>
           <div className="right-side">
             <table className="menu">
