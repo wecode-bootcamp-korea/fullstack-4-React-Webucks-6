@@ -5,7 +5,8 @@ import { useState } from 'react';
 function Login() {
   const navigate = useNavigate();
   const [idValue, setIdValue] = useState('');
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState('');
+  const [opacity, setOpacity] = useState(0.5);
 
   const goToList = () => {
     navigate('/main-geunhongLim');
@@ -13,6 +14,10 @@ function Login() {
 
   const handleIdInput = event => {
     return event.target.value;
+  };
+
+  const buttonHandler = button => {
+    return idValue.includes('@') && password.length >= 5 ? false : true;
   };
 
   return (
@@ -36,8 +41,10 @@ function Login() {
           }}
         />
         <button
-          onClick={() => {
-            goToList();
+          disabled={buttonHandler()}
+          style={{ opacity: opacity }}
+          onClick={event => {
+            console.log(event.target.style);
           }}
         >
           로그인
