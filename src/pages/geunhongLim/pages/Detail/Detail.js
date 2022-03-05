@@ -1,12 +1,12 @@
-import styles from './Detail.scss';
+import styles from './Detail.module.scss';
 import Nav from '../../components/TopNav/TopNav';
 import Footer from '../../components/Footer/Footer';
 
 function Aside() {
   return (
-    <div>
+    <div className={styles.ghDetailDiv}>
       <Nav />
-      <section>
+      <section className={styles.ghDetailSection}>
         <h2>콜드 브루</h2>
         <ul className={styles.linkPathList}>
           <li>홈 /</li>
@@ -25,7 +25,7 @@ function Aside() {
             <img src="images/coffeeimg/1.jpg" alt="나이트로 바닐라 크림" />
           </figure>
           <div className="right-side">
-            <table className="menu">
+            <table className={styles.ghDetailTable}>
               <thead className={styles.menuName}>
                 <tr>
                   <th colSpan="3">
@@ -83,16 +83,16 @@ function Aside() {
               <h4>리뷰</h4>
               <form className="reviews" action="">
                 <div className="reviewContainer">
-                  <div className="review">
+                  <div className={styles.ghReview}>
                     <span className={styles.userId}>coffe_lover</span>
                     <span className="text">너무 맛있어요!!</span>
                   </div>
-                  <div className="review">
+                  <div className={styles.ghReview}>
                     <span className={styles.userId}> CHOCO7 </span>
                     <span className="text">맛있다!!</span>
                   </div>
-                  <div className="review">
-                    <span className="user-id">dasdwad</span>
+                  <div className={styles.ghReview}>
+                    <span className={styles.userId}>dasdwad</span>
                     <span className="text"> 추천 </span>
                   </div>
                 </div>
