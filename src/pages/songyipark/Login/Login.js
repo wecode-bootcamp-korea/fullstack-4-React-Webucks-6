@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.scss';
 import { Link } from 'react-router-dom';
 
 function Login() {
-  const [loginData, setLoginData] = useState('');
+  const [idData, setIdData] = useState('');
+  const [pwData, setPwData] = useState('');
+  const btnActive = idData.includes('@') && pwData.length >= 5;
+
   function handleIdInput(e) {
-    setLoginData(e.target.value);
-    console.log(setLoginData);
+    setIdData(e.target.value);
+  }
+
+  function handlePwInput(e) {
+    setPwData(e.target.value);
   }
 
   return (
@@ -28,16 +34,23 @@ function Login() {
             className="pw"
             type="password"
             placeholder="비밀번호"
-            onChange={handleIdInput}
+            onChange={handlePwInput}
           />
           <button
             className="login-btn"
-            // disabled="true"
-            // onClick={() => {
-            //   loginBtn();
-            // }}
+            style={{
+              opacity: btnActive ? '1.0' : '0.4',
+            }}
           >
-            <Link to="/list-songyipark">로그인</Link>
+            <Link
+              to="/list-songyipark"
+              className="login-link"
+              onClick={e => {
+                btnActive || e.preventDefault();
+              }}
+            >
+              로그인
+            </Link>
           </button>
         </article>
         <div className="pw-question">비밀번호를 잊으셨나요?</div>
