@@ -1,101 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './List.scss';
 import TopNav from '../components/Nav/TopNav/TopNav';
+import CoffeeCard from '../components/CoffeeCard/CoffeeCard';
 
 function ListComponent() {
+  const [coffeeData, setCoffeeData] = useState([{}]);
+
+  useEffect(() => {
+    fetch('/data/listData.json')
+      .then(res => res.json())
+      .then(res => setCoffeeData(res));
+  }, []);
+
   return (
     <div>
       <TopNav />
 
       <div className="menu-bar">
         <h3>콜드 브루 커피</h3>
-        <img src="#" />
       </div>
       <div className="menu">
-        <div className="menu-box">
-          <span>
-            <img className="menu-img" src="./images/coffee.jpg" />
-          </span>
-          <p>나이트로 바닐라 크림 ♡</p>
-        </div>
-        <div className="menu-box">
-          <span>
-            <img className="menu-img" src="./images/coffee.jpg" />
-          </span>
-          <p>나이트로 바닐라 크림 ♡</p>
-        </div>
-        <div className="menu-box">
-          <span>
-            <img className="menu-img" src="./images/coffee.jpg" />
-          </span>
-          <p>나이트로 바닐라 크림 ♡</p>
-        </div>
-        <div className="menu-box">
-          <span>
-            <img className="menu-img" src="./images/coffee.jpg" />
-          </span>
-          <p>나이트로 바닐라 크림 ♡</p>
-        </div>
-      </div>
-      <div className="menu">
-        <div className="menu-box">
-          <span>
-            <img className="menu-img" src="./images/coffee.jpg" />
-          </span>
-          <p>나이트로 바닐라 크림 ♡</p>
-        </div>
-        <div className="menu-box">
-          <span>
-            <img className="menu-img" src="./images/coffee.jpg" />
-          </span>
-          <p>나이트로 바닐라 크림 ♡</p>
-        </div>
-        <div className="menu-box">
-          <span>
-            <img className="menu-img" src="./images/coffee.jpg" />
-          </span>
-          <p>나이트로 바닐라 크림 ♡</p>
-        </div>
-        <div className="menu-box">
-          <span>
-            <img className="menu-img" src="./images/coffee.jpg" />
-          </span>
-          <p>나이트로 바닐라 크림 ♡</p>
-        </div>
-      </div>
-      <div className="menu">
-        <div className="menu-box">
-          <span>
-            <img className="menu-img" src="./images/coffee.jpg" />
-          </span>
-          <p>나이트로 바닐라 크림 ♡</p>
-        </div>
-        <div className="menu-box">
-          <span>
-            <img className="menu-img" src="./images/coffee.jpg" />
-          </span>
-          <p>나이트로 바닐라 크림 ♡</p>
-        </div>
+        {coffeeData.map(data => (
+          <CoffeeCard key={data.id} data={data} />
+        ))}
       </div>
       <div className="menu-bar">
         <h3>콜드 브루 커피</h3>
-        <img src="#" />
       </div>
       <div className="menu">
-        <div className="menu">
-          <div className="menu-box">
-            <span>
-              <img className="menu-img" src="./images/coffee.jpg" />
-            </span>
-            <p>나이트로 바닐라 크림 ♡</p>
-          </div>
-          <div className="menu-box">
-            <span>
-              <img className="menu-img" src="./images/coffee.jpg" />
-            </span>
-            <p>나이트로 바닐라 크림 ♡</p>
-          </div>
-        </div>
+        {coffeeData.map(data => (
+          <CoffeeCard key={data.id} data={data} />
+        ))}
       </div>
     </div>
   );
