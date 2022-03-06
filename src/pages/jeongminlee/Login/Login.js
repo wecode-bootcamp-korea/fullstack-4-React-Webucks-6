@@ -30,7 +30,15 @@ function Login() {
           type="Password"
           placeholder="비밀번호"
         />
-        <button className="Button">로그인</button>
+        <button
+          className={
+            ID.includes('@') && password.length >= 5
+              ? 'ActivatedButton'
+              : 'Button'
+          }
+        >
+          로그인
+        </button>
         <div className="Find_Password">비밀번호를 잊으셨나요?</div>
       </div>
     </div>
