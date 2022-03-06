@@ -6,7 +6,6 @@ function Login() {
   const navigate = useNavigate();
   const [idValue, setIdValue] = useState('');
   const [password, setPassword] = useState('');
-  const [opacity, setOpacity] = useState(0.5);
 
   const goToList = () => {
     navigate('/main-geunhongLim');
@@ -15,11 +14,6 @@ function Login() {
   const handleIdInput = event => {
     return event.target.value;
   };
-
-  const buttonHandler = button => {
-    return idValue.includes('@') && password.length >= 5 ? false : true;
-  };
-
   return (
     <section className={styles.loginBox}>
       <figure className={styles.ghLogo}>
@@ -41,10 +35,14 @@ function Login() {
           }}
         />
         <button
-          disabled={buttonHandler()}
-          style={{ opacity: opacity }}
+          disabled={
+            idValue.includes('@') && password.length >= 5 ? false : true
+          }
+          style={{
+            opacity: idValue.includes('@') && password.length >= 5 ? 1 : 0.5,
+          }}
           onClick={event => {
-            console.log(event.target.style);
+            goToList();
           }}
         >
           로그인
