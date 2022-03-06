@@ -7,7 +7,11 @@ import { useParams } from 'react-router-dom';
 
 function Detail() {
   const params = useParams();
-  console.log(params.id);
+  const [heart, setHeart] = useState('🤍');
+
+  const changeHeartColor = () => {
+    heart === '🤍' ? setHeart('❤️') : setHeart('🤍');
+  };
   const [details, setDetails] = useState({
     id: 0,
     name: '',
@@ -27,8 +31,6 @@ function Detail() {
         setDetails(data);
       });
   }, []);
-
-  console.log(details);
   return (
     <>
       <div className={styles.container}>
@@ -41,7 +43,9 @@ function Detail() {
             <div className={styles.coffeeTitle}>
               <h2>{details.name}</h2>
               <p>{details.engName}</p>
-              <button className={styles.heart}>🤍</button>
+              <button onClick={changeHeartColor} className={styles.heart}>
+                {heart}
+              </button>
             </div>
             <div className={styles.description}>{details.description}</div>
             <div className={styles.productInfo}>
