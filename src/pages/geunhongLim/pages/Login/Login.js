@@ -6,14 +6,29 @@ function Login() {
   const navigate = useNavigate();
   const [idValue, setIdValue] = useState('');
   const [password, setPassword] = useState('');
+  const [disable, setDisable] = useState(true);
+  const [opacity, setOpacity] = useState(0.5);
 
   const goToList = () => {
     navigate('/main-geunhongLim');
   };
 
-  const handleIdInput = event => {
+  const handleInput = event => {
     return event.target.value;
   };
+
+  const handleopacity = () => {
+    idValue.includes('@') && password.length >= 5
+      ? setOpacity(1)
+      : setOpacity(0.5);
+  };
+
+  const handleDisable = () => {
+    idValue.includes('@') && password.length >= 5
+      ? setDisable(false)
+      : setDisable(true);
+  };
+
   return (
     <section className={styles.loginBox}>
       <figure className={styles.ghLogo}>
@@ -24,22 +39,24 @@ function Login() {
           type="text"
           placeholder="전화번호, 사용자 이름 또는 이메일"
           onChange={event => {
-            setIdValue(handleIdInput(event));
+            setIdValue(handleInput(event));
+            handleopacity();
+            handleDisable();
           }}
         />
         <input
           type="password"
           placeholder="비밀번호"
           onChange={event => {
-            setPassword(handleIdInput(event));
+            setPassword(handleInput(event));
+            handleopacity();
+            handleDisable();
           }}
         />
         <button
-          disabled={
-            idValue.includes('@') && password.length >= 5 ? false : true
-          }
+          disabled={disable}
           style={{
-            opacity: idValue.includes('@') && password.length >= 5 ? 1 : 0.5,
+            opacity: opacity,
           }}
           onClick={event => {
             goToList();
