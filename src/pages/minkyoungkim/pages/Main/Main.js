@@ -27,15 +27,7 @@ function Main() {
         </article>
         <article className={styles.coffeeContents}>
           {lists.slice(0, 10).map(list => {
-            return (
-              <CoffeeCard
-                key={list.id}
-                list={list}
-                onClick={() => {
-                  // navigate(`/detail-minkyoungkim/${list.id}}`);
-                }}
-              />
-            );
+            return <CoffeeCard key={list.id} list={list} />;
           })}
         </article>
       </section>
@@ -51,9 +43,9 @@ function Main() {
               <CoffeeCard
                 key={list.id}
                 list={list}
-                onClick={() => {
-                  // navigate(`/detail-minkyoungkim/${list.id}}`);
-                }}
+                // onClick={() => {
+                //   navigate(`/detail-minkyoungkim/${list.id}}`);
+                // }}
               />
             );
           })}

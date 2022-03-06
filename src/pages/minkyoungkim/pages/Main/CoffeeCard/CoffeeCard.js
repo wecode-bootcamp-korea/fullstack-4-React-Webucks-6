@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 function CoffeeCard({ list }) {
   const navigate = useNavigate();
-  console.log(navigate);
+  console.log(list);
 
   return (
     <div
@@ -15,7 +15,7 @@ function CoffeeCard({ list }) {
       }}
     >
       <div className={styles.coffeeImgbox}>
-        <img alt={list.name} src={list.image} />
+        <img alt={list.name} src={`/${list.image}`} />
       </div>
       <p className={styles.coffeeName}>{list.name} ♡</p>
     </div>

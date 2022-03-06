@@ -1,9 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.scss';
 
 function Login() {
   const navigate = useNavigate();
+  const [opacity, setOpacity] = useState(0.5);
+  const [inputs, setInputs] = useState({
+    email: '',
+    password: '',
+  });
+
+  const { email, password } = inputs;
+
+  const handleInput = event => {
+    const { value, name } = event.target;
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
+
+  const loginBtn = data => {
+    data.email.includes('@') && data.password.length >= 7
+      ? goToLists()
+      : alert('이메일형식에 @가 들어가있나요? / 비밀번호 7자이상인가요?');
+  };
+
   function goToLists() {
     navigate('/main-minkyoungkim');
   }
@@ -14,22 +36,27 @@ function Login() {
         <h1 className={styles.logo}>WeBucks</h1>
         <div className={styles.loginInputContainer}>
           <input
+            value={email || ''}
+            onChange={handleInput}
             name="email"
             className={styles.email}
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
           />
           <input
+            value={password}
+            onChange={handleInput}
             className={styles.password}
             type="password"
+            name="password"
             placeholder="비밀번호"
           />
         </div>
         <button
-          className={styles.loginBtn}
+          className={`${styles.loginBtn}`}
           type="submit"
           onClick={() => {
-            goToLists();
+            loginBtn(inputs);
           }}
         >
           로그인
