@@ -58,6 +58,10 @@
             transition: all 0.3s;
             opacity: 0.5;
             font-size: 30px;
+
+            i {
+              transition: all 0.3s;
+            }
           }
         }
       }
@@ -72,6 +76,7 @@
         }
       }
       .menuDe {
+        padding: 25px 0;
         border-top: 3px solid black;
         border-bottom: 1px solid black;
       }

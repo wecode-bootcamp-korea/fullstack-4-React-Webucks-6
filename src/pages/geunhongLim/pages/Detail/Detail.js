@@ -1,8 +1,15 @@
+import { useState } from 'react';
 import styles from './Detail.module.scss';
 import Nav from '../../components/TopNav/TopNav';
 import Footer from '../../components/Footer/Footer';
 
 function Aside() {
+  const [color, setColor] = useState('black');
+
+  const handleColor = event => {
+    event.target.style.color === 'red' ? setColor('black') : setColor('red');
+  };
+
   return (
     <div className={styles.ghDetailDiv}>
       <Nav />
@@ -10,13 +17,9 @@ function Aside() {
         <h2>콜드 브루</h2>
         <ul className={styles.linkPathList}>
           <li>홈 /</li>
-
           <li>MENU /</li>
-
           <li>음료 /</li>
-
           <li>콜드 브루 /</li>
-
           <li>나이트로 바닐라 크림</li>
         </ul>
 
@@ -34,14 +37,20 @@ function Aside() {
                   </th>
                   <td className={styles.heart}>
                     <button>
-                      <i className="fa-solid fa-heart" />
+                      <i
+                        className="fa-solid fa-heart"
+                        style={{ color: color }}
+                        onClick={event => {
+                          handleColor(event);
+                        }}
+                      />
                     </button>
                   </td>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td colSpan="4" className={(styles.menuDe, styles.tdTitle)}>
+                  <td colSpan="4" className={styles.menuDe}>
                     부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을
                     한번에 느껴보세요!
                   </td>
