@@ -4,19 +4,24 @@ import Nav from '../Component/Nav/Nav';
 import Footer from '../Component/Footer/Footer';
 
 function Detail() {
-  return (
-    // const [coffeeDetail, setCoffeeDetail] = useState({
-    //   "id": 0,
-    //   "name": "",
-    //   "engName": "",
-    //   "description": "",
-    //   "img": "images/coffeeImg/1.jpg",
-    //   "nutritionInfo": [],
-    //   "allergy": "",
-    //   "review": [],
-    // });
-    // useEffect
+  // const [coffeeDetail, setCoffeeDetail] = useState({
+  //   "id": 0,
+  //   "name": "",
+  //   "engName": "",
+  //   "description": "",
+  //   "img": "images/coffeeImg/1.jpg",
+  //   "nutritionInfo": [],
+  //   "allergy": "",
+  //   "review": []
+  // });
 
+  // useEffect(() => {
+  //   fetch('/data/songyipark/1.json').then(res => res.json()).then(data => {
+  //     setCoffeeDetail(data)});
+  //   });
+  // });
+
+  return (
     <div className="detail-full-page">
       <div className="detail-container">
         <Nav />

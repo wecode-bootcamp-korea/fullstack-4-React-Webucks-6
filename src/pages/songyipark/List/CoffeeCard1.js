@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-function CoffeeCard() {
+function CoffeeCard1() {
   const [coffeeList, setCoffeeList] = useState([]);
 
   useEffect(() => {
-    fetch('/data/listData.json')
+    fetch('/data/songyipark/listData1.json')
       .then(res => res.json())
       .then(data => {
         setCoffeeList(data);
@@ -14,7 +14,7 @@ function CoffeeCard() {
   return (
     <section className="coffee-menu-list">
       {coffeeList.map(coffeeData => (
-        <div>
+        <div key={coffeeData.id}>
           <img
             className="coffee-img"
             src={coffeeData.image}
@@ -27,4 +27,4 @@ function CoffeeCard() {
   );
 }
 
-export default CoffeeCard;
+export default CoffeeCard1;

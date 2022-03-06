@@ -1,0 +1,43 @@
+{
+  "id": 1,
+  "name": "화이트 초콜릿 모카",
+  "engName": "White Chocolate Mocha",
+  "description": "달콤하고 부드러운 화이트 초콜릿 시럽과 에스프레소를 스팀 밀크와 섞어 휘핑크림으로 마무리한 음료로 달콤함과 강렬한 에스프레소가 부드럽게 어우러진 커피",
+  "img": "/images/songyipark/c1.jpg",
+  "nutritionInfo": [
+    {
+      "kal": 345
+    },
+    {
+      "na": 150
+    },
+    {
+      "saturatedFat": 11
+    },
+    {
+      "sugar": 35
+    },
+    {
+      "protein": 11
+    },
+    {
+      "caffeine": 75
+    }
+  ],
+
+  "allergy": "알레르기 유발 요인 : 우유",
+  "review": [
+    {
+      "id": "coffee-lover",
+      "comment": "너무 맛있어요!"
+    },
+    {
+      "id": "CHOCO7",
+      "comment": "오늘도 화이트 초콜릿 모카를 마시러 갑니다!"
+    },
+    {
+      "id": "legend_dev",
+      "comment": "진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다."
+    }
+  ]
+}

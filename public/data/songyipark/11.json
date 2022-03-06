@@ -1,0 +1,43 @@
+{
+  "id": 11,
+  "name": "나이트로 바닐라 크림",
+  "engName": "Nitro Vanilla Cream",
+  "description": "부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에 느껴보세요!",
+  "img": "images/coffeeimg/1.jpg",
+  "nutritionInfo": [
+    {
+      "kal": 345
+    },
+    {
+      "na": 150
+    },
+    {
+      "saturatedFat": 11
+    },
+    {
+      "sugar": 35
+    },
+    {
+      "protein": 11
+    },
+    {
+      "caffeine": 75
+    }
+  ],
+
+  "allergy": "우유",
+  "review": [
+    {
+      "id": "coffee-lover",
+      "comment": "너무 맛있어요!"
+    },
+    {
+      "id": "CHOCO7",
+      "comment": "오늘도 화이트 초콜릿 모카를 마시러 갑니다!"
+    },
+    {
+      "id": "legend_dev",
+      "comment": "진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초..."
+    }
+  ]
+}

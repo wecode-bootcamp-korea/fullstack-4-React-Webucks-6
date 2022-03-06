@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.scss';
 import { Link } from 'react-router-dom';
 
 function Login() {
-  function loginBtn() {}
+  const [loginData, setLoginData] = useState('');
+  function handleIdInput(e) {
+    setLoginData(e.target.value);
+    console.log(setLoginData);
+  }
 
   return (
     <div className="login-full-page">
@@ -18,14 +22,20 @@ function Login() {
             className="id"
             type="text"
             placeholder="전화번호, 사용자 이름 또는 이메일"
+            onChange={handleIdInput}
           />
-          <input className="pw" type="password" placeholder="비밀번호" />
+          <input
+            className="pw"
+            type="password"
+            placeholder="비밀번호"
+            onChange={handleIdInput}
+          />
           <button
             className="login-btn"
             // disabled="true"
-            onClick={() => {
-              loginBtn();
-            }}
+            // onClick={() => {
+            //   loginBtn();
+            // }}
           >
             <Link to="/list-songyipark">로그인</Link>
           </button>
