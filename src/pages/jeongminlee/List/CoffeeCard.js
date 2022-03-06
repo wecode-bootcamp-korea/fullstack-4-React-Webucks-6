@@ -19,17 +19,6 @@ function CoffeeCard() {
 
   return (
     <div className="CoffeeCard">
-      {/* 콜드브루커피 네비게이션 바 */}
-      <div className="kind">
-        <span className="kind1">콜드 브루 커피&nbsp;&nbsp;</span>
-        <i className="fa-solid fa-mug-hot" />
-        <span>&nbsp;&nbsp;</span>
-        <span className="explain1_list">
-          디카페인 에스프레소 샷 추가 가능(일부 음료 제외)
-        </span>
-        {/* 콜드브루커피 네비게이션 바 */}
-      </div>
-      {/* 콜드브루커피 메뉴 */}
       <div className="menu">
         {coldBrewCoffee.map(el => (
           <div key={el.id} className="explain">
