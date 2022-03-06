@@ -2,6 +2,7 @@
   "id": 4,
   "name": "바닐라 크림 콜드 브루",
   "engName": "Nitro Vanilla Cream",
+  "type": "콜드 브루",
   "description": "부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에 느껴보세요!",
   "img": "/images/coffeeimg/4.jpg",
   "nutritionInfo": [

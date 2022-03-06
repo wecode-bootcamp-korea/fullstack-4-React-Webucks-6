@@ -2,6 +2,7 @@
   "id": 11,
   "name": "아이스 커피",
   "engName": "Nitro Vanilla Cream",
+  "type": "브루드 커피",
   "description": "부드러운 목넘김의 나이트로 커피와 바닐라 크림의 매력을 한번에 느껴보세요!",
   "img": "/images/coffeeimg/11.jpg",
   "nutritionInfo": [
