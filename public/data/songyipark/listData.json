@@ -1,0 +1,66 @@
+{
+  "coldBrewList": [
+    {
+      "id": 1,
+      "name": "나이트로 바닐라 크림",
+      "image": "/images/songyipark/c1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "나이트로 콜드 브루",
+      "image": "/images/songyipark/c2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "돌체 콜드 브루",
+      "image": "/images/songyipark/c3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "바닐라 크림 콜드 브루",
+      "image": "/images/songyipark/c4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "벨벳 다크 모카 나이트로",
+      "image": "/images/songyipark/c5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "시그니처 더 블랙 콜드 브루",
+      "image": "/images/songyipark/c6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "제주 비자림 콜드 브루",
+      "image": "/images/songyipark/c7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "콜드 브루",
+      "image": "/images/songyipark/c8.jpg"
+    },
+    {
+      "id": 9,
+      "name": "콜드 브루 몰트",
+      "image": "/images/songyipark/c9.jpg"
+    },
+    {
+      "id": 10,
+      "name": "콜드 브루 오트 라떼",
+      "image": "/images/songyipark/c10.jpg"
+    }
+  ],
+  "brewedList": [
+    {
+      "id": 11,
+      "name": "아이스 커피",
+      "image": "/images/songyipark/c11.jpg"
+    },
+    {
+      "id": 12,
+      "name": "오늘의 커피",
+      "image": "/images/songyipark/c12.jpg"
+    }
+  ]
+}

@@ -1,7 +1,9 @@
-// import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Detail.scss';
 import Nav from '../Component/Nav/Nav';
 import Footer from '../Component/Footer/Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 function Detail() {
   // const [coffeeDetail, setCoffeeDetail] = useState({
@@ -20,6 +22,12 @@ function Detail() {
   //     setCoffeeDetail(data)});
   //   });
   // });
+
+  const [iconColor, setIconColor] = useState('black');
+
+  function changeColor() {
+    iconColor === 'black' ? setIconColor('red') : setIconColor('black');
+  }
 
   return (
     <div className="detail-full-page">
@@ -47,7 +55,11 @@ function Detail() {
                   <h2 className="menu-h2">화이트 초콜릿 모카</h2>
                   <h3 className="menu-h3">White Chocolate Mocha</h3>
                 </div>
-                <i className="far fa-heart" />
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  onClick={changeColor}
+                  style={{ color: iconColor }}
+                />
               </header>
 
               <p className="menu-explain">
