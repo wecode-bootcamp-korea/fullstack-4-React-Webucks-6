@@ -24,11 +24,7 @@ function Comment() {
   };
 
   const handleDeleteComment = event => {
-    console.log(reviewArray);
-    const deleteMent = event.target.previousElementSibling.lastChild.innerText;
-
-    const newArray = reviewArray.filter(data => data.review !== deleteMent);
-    console.log(newArray);
+    event.target.parentElement.classList.add(styles.delete);
   };
 
   // 렌더링
