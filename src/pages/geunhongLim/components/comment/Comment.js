@@ -8,6 +8,7 @@ function Comment() {
   const [reviewArray, setReviewArray] = useState([
     { id: `초코덕후`, review: review },
   ]);
+  const [color, setColor] = useState('grey');
   //함수
   const handleTotalEnter = event => {
     if (event.key === 'Enter' && event.target.value !== '') {
@@ -27,6 +28,10 @@ function Comment() {
     event.target.parentElement.classList.add(styles.delete);
   };
 
+  const handleColor = () => {
+    color === 'grey' ? setColor('red') : setColor('grey');
+  };
+
   // 렌더링
   return (
     <aside className={styles.ghAsideAside}>
@@ -39,6 +44,13 @@ function Comment() {
                 <span className={styles.userId}>{data.id}</span>
                 <span className="text"> {data.review}</span>
               </div>
+              <i
+                className="fa-solid fa-heart"
+                style={{ color: color }}
+                onClick={() => {
+                  handleColor();
+                }}
+              />
               <button
                 className={styles.ghDeleteBTn}
                 onClick={event => {
