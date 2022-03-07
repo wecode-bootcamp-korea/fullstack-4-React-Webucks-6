@@ -4,6 +4,7 @@ import styles from './Login.module.scss';
 
 function Login() {
   const navigate = useNavigate();
+  const [isActive, setIsActive] = useState(true);
   const [opacity, setOpacity] = useState(0.5);
   const [inputs, setInputs] = useState({
     email: '',
@@ -20,14 +21,14 @@ function Login() {
     });
   };
 
-  const loginBtn = data => {
-    data.email.includes('@') && data.password.length >= 7
-      ? goToLists()
-      : alert('이메일형식에 @가 들어가있나요? / 비밀번호 7자이상인가요?');
+  const isLoginPassed = data => {
+    return data && data.email.includes('@') && data.password.length >= 7
+      ? (setOpacity(1), setIsActive(false))
+      : (setOpacity(0.5), setIsActive(true));
   };
 
   function goToLists() {
-    navigate('/main-minkyoungkim');
+    if (isActive === false) return navigate('/main-minkyoungkim');
   }
 
   return (
@@ -50,19 +51,21 @@ function Login() {
             type="password"
             name="password"
             placeholder="비밀번호"
+            onKeyUp={() => isLoginPassed(inputs)}
           />
         </div>
         <button
           className={`${styles.loginBtn}`}
+          disabled={isActive}
+          style={{ opacity: opacity }}
           type="submit"
           onClick={() => {
-            loginBtn(inputs);
+            goToLists();
           }}
         >
           로그인
         </button>
         <Link to="/signUp" className={styles.forgetPW}>
-          {' '}
           비밀번호를 잊으셨나요?
         </Link>
       </section>

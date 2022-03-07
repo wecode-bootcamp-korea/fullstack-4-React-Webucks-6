@@ -83,6 +83,7 @@ function Detail() {
               </div>
               <section className={styles.reivewInputWrapper}>
                 <input
+                  onKey={() => {}}
                   className={styles.reviewInput}
                   type="text"
                   placeholder="리뷰를 입력해주세요!"
