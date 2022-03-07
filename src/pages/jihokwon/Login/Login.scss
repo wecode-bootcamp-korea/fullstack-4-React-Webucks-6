@@ -57,7 +57,7 @@ $font-size-smail: 7px;
     @include flex-center;
     @include margin-padding-sizing;
     @include border-sizing(white);
-    background-color: #add3ea;
+    background-color: #3e98f2;
     color: white;
     cursor: pointer;
   }
@@ -71,3 +71,5 @@ $font-size-smail: 7px;
   font-size: $font-size-smail;
   text-decoration: none;
 }
+
+// #add3ea
