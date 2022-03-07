@@ -1,33 +1,15 @@
 import { useState } from 'react';
-import styles from './Detail.module.scss';
 import Nav from '../../components/TopNav/TopNav';
 import Footer from '../../components/Footer/Footer';
+import Comment from '../../components/comment/Comment';
+import styles from './Detail.module.scss';
 
 function Aside() {
   const [color, setColor] = useState('black');
-  const [review, setReview] = useState('우주최강맛임 대박ㅋㅋ');
-  const [reviewArray, setReviewArray] = useState([
-    { id: `초코덕후`, review: review },
-  ]);
 
   const handleColor = event => {
     event.target.style.color === 'red' ? setColor('black') : setColor('red');
   };
-
-  const handleTotalEnter = event => {
-    if (event.key === 'Enter' && event.target.value !== '') {
-      event.preventDefault();
-      const repoArray = [...reviewArray];
-      repoArray.push({ id: '익명', review: review });
-      setReviewArray(repoArray);
-      event.target.value = '';
-    }
-  };
-
-  const handleReviewInput = event => {
-    setReview(event.target.value);
-  };
-
   return (
     <div className={styles.ghDetailDiv}>
       <Nav />
@@ -106,43 +88,7 @@ function Aside() {
               알레르기 유발 요인: 우유
             </article>
 
-            <aside>
-              <h4>리뷰</h4>
-              <div className="reviews" action="">
-                <ul className="reviewContainer">
-                  <li className={styles.ghReview}>
-                    <span className={styles.userId}>coffe_lover</span>
-                    <span className="text">너무 맛있어요!!</span>
-                  </li>
-                  <li className={styles.ghReview}>
-                    <span className={styles.userId}> CHOCO7 </span>
-                    <span className="text">맛있다!!</span>
-                  </li>
-                  <li className={styles.ghReview}>
-                    <span className={styles.userId}>dasdwad</span>
-                    <span className="text"> 추천 </span>
-                  </li>
-                  {reviewArray.map(data => (
-                    <li className={styles.ghReview} key={data.id}>
-                      <span className={styles.userId}>{data.id}</span>
-                      <span className="text"> {data.review}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <input
-                  className="review-input"
-                  type="text"
-                  placeholder="리뷰를 입력해주세요."
-                  onKeyPress={event => {
-                    handleTotalEnter(event);
-                  }}
-                  onKeyUp={event => {
-                    handleReviewInput(event);
-                  }}
-                />
-              </div>
-            </aside>
+            <Comment />
           </div>
         </article>
       </section>

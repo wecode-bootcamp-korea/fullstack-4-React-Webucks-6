@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 // 다송's 컴포넌트
 
@@ -33,6 +34,7 @@ import Listsongyipark from './pages/songyipark/List/List';
 import Detailsongyipark from './pages/songyipark/Detail/Detail';
 
 function Router() {
+  let { id } = useParams();
   return (
     <BrowserRouter>
       <Routes>

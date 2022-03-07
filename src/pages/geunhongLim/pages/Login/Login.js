@@ -1,6 +1,7 @@
 import styles from './Login.module.scss';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import { useEffect } from 'react';
 
 function Login() {
   const navigate = useNavigate();
@@ -8,6 +9,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const [disable, setDisable] = useState(true);
   const [opacity, setOpacity] = useState(0.5);
+  const [loginable, setLoginable] = useState(false);
 
   const goToList = () => {
     navigate('/main-geunhongLim');
@@ -17,16 +19,19 @@ function Login() {
     return event.target.value;
   };
 
-  const handleopacity = () => {
-    idValue.includes('@') && password.length >= 5
-      ? setOpacity(1)
-      : setOpacity(0.5);
+  useEffect(() => {
+    console.log('확인');
+    loginable ? buttonOn() : buttonOff();
+  }, [loginable]);
+
+  const buttonOn = () => {
+    setDisable(false);
+    setOpacity(1);
   };
 
-  const handleDisable = () => {
-    idValue.includes('@') && password.length >= 5
-      ? setDisable(false)
-      : setDisable(true);
+  const buttonOff = () => {
+    setOpacity(0.5);
+    setDisable(true);
   };
 
   return (
@@ -40,8 +45,7 @@ function Login() {
           placeholder="전화번호, 사용자 이름 또는 이메일"
           onChange={event => {
             setIdValue(handleInput(event));
-            handleopacity();
-            handleDisable();
+            setLoginable(idValue.includes('@') && password.length >= 5);
           }}
         />
         <input
@@ -49,8 +53,7 @@ function Login() {
           placeholder="비밀번호"
           onChange={event => {
             setPassword(handleInput(event));
-            handleopacity();
-            handleDisable();
+            setLoginable(idValue.includes('@') && password.length >= 5);
           }}
         />
         <button
