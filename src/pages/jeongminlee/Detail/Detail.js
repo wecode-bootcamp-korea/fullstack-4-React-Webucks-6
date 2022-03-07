@@ -6,13 +6,13 @@ import { useMatch, useParams } from 'react-router-dom';
 function Detail() {
   const params = useParams();
 
-  const [newReview, setNewReview] = useState();
+  // const [newReview, setNewReview] = useState();
   const reviewWrite = function (e) {
     if (e.keyCode === 13) {
       const ID = prompt('ID를 입력해주세요.');
-      const reviews = document.querySelector('.reviews');
 
       const review = document.querySelector('.explain7_explain');
+      const reviews = document.querySelector('.reviews');
       const review_value = document.querySelector('.explain7_explain').value;
 
       const div = document.createElement('div'); // 리뷰를 감싸줄 div 태그 생성
@@ -30,13 +30,8 @@ function Detail() {
       span_ID.innerText = ID; // ID 입력
       span_content.innerText = review_value; // 리뷰내용 입력
 
-      // console.log(ID);
-      // console.log(review_value);
       review.value = null; // 입력했던 텍스트값 초기화.
     }
-    setNewReview(e.target.value);
-    console.log(e.target.value);
-    // review.value = null; // 입력했던 텍스트값 초기화.
   };
 
   const [coffeeDetail, setCoffeeDetail] = useState({
