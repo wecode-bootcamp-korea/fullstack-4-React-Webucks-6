@@ -21,7 +21,7 @@ function Main() {
   }, []);
 
   return (
-    <div>
+    <div className={styles.ghMain}>
       <Nav />
 
       <section className="coffee-menu-section">

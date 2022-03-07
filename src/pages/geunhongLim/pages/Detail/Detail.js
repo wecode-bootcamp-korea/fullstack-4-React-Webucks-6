@@ -15,12 +15,11 @@ function Aside() {
   };
 
   const handleTotalEnter = event => {
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' && event.target.value !== '') {
       event.preventDefault();
-      console.log(review);
-      const array = [...reviewArray];
-      if (event.target.value !== '') array.push({ id: '익명', review: review });
-      setReviewArray(array);
+      const repoArray = [...reviewArray];
+      repoArray.push({ id: '익명', review: review });
+      setReviewArray(repoArray);
       event.target.value = '';
     }
   };
