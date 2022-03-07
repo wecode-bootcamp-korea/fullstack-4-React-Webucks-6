@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Detail.scss';
 import TopNav from '../components/Nav/TopNav/TopNav';
 import Footer from '../components/Footer/Footer';
 
 function DetailComponent() {
+  const [heartColor, setHeartColor] = useState('fa-regular fa-heart gray');
+  const clickEvent = () => {
+    heartColor === 'fa-regular fa-heart gray'
+      ? setHeartColor('fa-solid fa-heart red')
+      : setHeartColor('fa-regular fa-heart gray');
+  };
+
   return (
     <>
       <div className="box">
@@ -28,9 +35,7 @@ function DetailComponent() {
                 <p>화이트 초콜릿 모카</p>
                 <p>White Chocolate Mocha</p>
               </div>
-              <div className="heart-text">
-                <i className="fa-regular fa-heart" />
-              </div>
+              <i className={heartColor} onClick={clickEvent} />
             </div>
 
             <div className="text-box-info">

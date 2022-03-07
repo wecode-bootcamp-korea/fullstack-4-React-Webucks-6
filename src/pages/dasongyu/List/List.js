@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './List.scss';
 import TopNav from '../components/Nav/TopNav/TopNav';
 import CoffeeCard from '../components/CoffeeCard/CoffeeCard';
+import { Link } from 'react-router-dom';
 
 function ListComponent() {
   const [coffeeData, setCoffeeData] = useState([{}]);
@@ -21,7 +22,9 @@ function ListComponent() {
       </div>
       <div className="menu">
         {coffeeData.map(data => (
-          <CoffeeCard key={data.id} data={data} />
+          <Link to="/detail-dasongyu">
+            <CoffeeCard key={data.id} data={data} />
+          </Link>
         ))}
       </div>
       <div className="menu-bar">

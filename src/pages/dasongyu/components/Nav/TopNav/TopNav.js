@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 function TopNav() {
   return (
     <div className="nav-bar">
-      <h1>WeBucks</h1>
+      <Link to="/login-dasongyu">
+        <h1>WeBucks</h1>
+      </Link>
       <div className="nav">
         <span>COFFEE </span>
         <span>
