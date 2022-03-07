@@ -6,6 +6,39 @@ import { useMatch, useParams } from 'react-router-dom';
 function Detail() {
   const params = useParams();
 
+  const [newReview, setNewReview] = useState();
+  const reviewWrite = function (e) {
+    if (e.keyCode === 13) {
+      const ID = prompt('ID를 입력해주세요.');
+      const reviews = document.querySelector('.reviews');
+
+      const review = document.querySelector('.explain7_explain');
+      const review_value = document.querySelector('.explain7_explain').value;
+
+      const div = document.createElement('div'); // 리뷰를 감싸줄 div 태그 생성
+      const span_ID = document.createElement('span'); // 리뷰 아이디를 감싸줄 span 태그 생성
+      const span_content = document.createElement('span'); // 리뷰 내용을 감싸줄 span 태그 생성
+
+      div.setAttribute('class', 'review'); // 리뷰를 감싸줄 div에 클래스명 지정.
+      span_ID.setAttribute('class', 'review_id'); // 리뷰 아이디를 감싸줄 span 태그에 클래스명 지정
+      span_content.setAttribute('class', 'review_content'); // 리뷰 내용을 감싸줄 span 태그에 클래스명 지정
+
+      reviews.appendChild(div);
+      div.appendChild(span_ID);
+      div.appendChild(span_content);
+
+      span_ID.innerText = ID; // ID 입력
+      span_content.innerText = review_value; // 리뷰내용 입력
+
+      // console.log(ID);
+      // console.log(review_value);
+      review.value = null; // 입력했던 텍스트값 초기화.
+    }
+    setNewReview(e.target.value);
+    console.log(e.target.value);
+    // review.value = null; // 입력했던 텍스트값 초기화.
+  };
+
   const [coffeeDetail, setCoffeeDetail] = useState({
     id: 0,
     name: '',
@@ -64,7 +97,6 @@ function Detail() {
                     : 'far fa-heart'
                 }
               />
-              {/* <i onClick={redHeartClick} className="fas fa-heart" /> */}
             </div>
             <hr className="hr_first" />
             <div className="explain2">
@@ -128,12 +160,13 @@ function Detail() {
                     모카는 전설이다. 진짜 화이트 초···
                   </span>
                 </div>
-                <div className="explain7">
-                  <input
-                    className="explain7_explain"
-                    placeholder="리뷰를 입력해주세요."
-                  />
-                </div>
+              </div>
+              <div className="explain7">
+                <input
+                  onKeyUp={reviewWrite}
+                  className="explain7_explain"
+                  placeholder="리뷰를 입력해주세요."
+                />
               </div>
             </div>
           </div>
