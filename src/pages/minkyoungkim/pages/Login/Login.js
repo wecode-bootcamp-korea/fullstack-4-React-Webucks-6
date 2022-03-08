@@ -34,6 +34,20 @@ function Login() {
   function goToLists() {
     if (isActive === false) return navigate('/main-minkyoungkim');
   }
+  const handleSignUp = () => {
+    fetch('/users/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('result : ', result));
+  };
 
   const handleLogin = () => {
     fetch('/users/login', {
@@ -50,7 +64,7 @@ function Login() {
       .then(result =>
         isActive === false && result.token
           ? goToLists()
-          : alert('로그인 실패!!')
+          : console.log('결과 : ', result)
       );
   };
 
@@ -77,16 +91,26 @@ function Login() {
             // onKeyUp={() => isLoginPassed(inputs)}
           />
         </div>
-        <button
-          className={`${styles.loginBtn}`}
-          disabled={isActive}
-          style={{ opacity: opacity }}
-          type="submit"
-          // onClick={goToLists}
-          onClick={handleLogin}
-        >
-          로그인
-        </button>
+        <div className={styles.buttonWrapper}>
+          <button
+            className={styles.loginBtn}
+            disabled={isActive}
+            style={{ opacity: opacity }}
+            type="submit"
+            onClick={handleSignUp}
+          >
+            signUp
+          </button>
+          <button
+            className={`${styles.loginBtn}`}
+            disabled={isActive}
+            style={{ opacity: opacity }}
+            type="submit"
+            onClick={handleLogin}
+          >
+            로그인
+          </button>
+        </div>
         <Link to="/signUp" className={styles.forgetPW}>
           비밀번호를 잊으셨나요?
         </Link>
