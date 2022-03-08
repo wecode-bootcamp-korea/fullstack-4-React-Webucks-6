@@ -9,30 +9,60 @@ function LoginComponent() {
     navigate('/list-jihokwon');
   };
 
-  const [idValue, setIdValue] = useState('');
-  const [pwValue, setPwValue] = useState('');
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
   const [loginBtnColor, setLoginBtnColor] = useState('#add3ea');
-  const [btnActive, setBtnActive] = useState(true);
+  const [isBtnActive, setIsBtnActive] = useState(true);
 
   useEffect(() => {
-    idValue.includes('@') && pwValue.length > 4
-      ? setBtnActive(false)
-      : setBtnActive(true);
-  }, [idValue, pwValue]);
+    id.includes('@') && pw.length > 4
+      ? setIsBtnActive(false)
+      : setIsBtnActive(true);
+  }, [id, pw]);
 
   useEffect(() => {
-    idValue.includes('@') && pwValue.length > 4
+    id.includes('@') && pw.length > 4
       ? setLoginBtnColor('#3e98f2')
       : setLoginBtnColor('#add3ea');
-  }, [idValue, pwValue]);
+  }, [id, pw]);
 
   function handleIdInput(event) {
-    setIdValue(event.target.value);
+    setId(event.target.value);
   }
 
   function handlePwInput(event) {
-    setPwValue(event.target.value);
+    setPw(event.target.value);
   }
+
+  const handleSignUp = () => {
+    fetch('/users/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('결과: ', result));
+  };
+
+  const handleLogin = () => {
+    fetch('/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: id,
+        password: pw,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log('결과: ', result));
+  };
 
   return (
     <div>
@@ -46,23 +76,34 @@ function LoginComponent() {
               className="loginArea_input"
               type="text"
               placeholder="전화번호, 사용자 이름 또는 이메일"
-              value={idValue}
+              value={id}
               onChange={handleIdInput}
             />
             <input
               className="loginArea_input"
               type="password"
               placeholder="비밀번호"
-              value={pwValue}
+              value={pw}
               onChange={handlePwInput}
             />
             <button
               className="loginArea_btn"
-              disabled={btnActive}
-              onClick={goToList}
+              disabled={isBtnActive}
+              onClick={() => {
+                goToList();
+                handleLogin();
+              }}
               style={{ backgroundColor: loginBtnColor }}
             >
               로그인
+            </button>
+            <button
+              className="loginArea_btn"
+              disabled={isBtnActive}
+              onClick={handleSignUp}
+              style={{ backgroundColor: loginBtnColor }}
+            >
+              회원가입
             </button>
           </div>
           <Link to="/signup" className="find-password" href="">
