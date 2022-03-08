@@ -12,7 +12,6 @@ function Login() {
   });
 
   const { email, password } = inputs;
-
   const handleInput = event => {
     const { value, name } = event.target;
     setInputs({
@@ -20,12 +19,6 @@ function Login() {
       [name]: value,
     });
   };
-
-  // const isLoginPassed = data => {
-  //   return data && data.email.includes('@') && data.password.length >= 7
-  //     ? (setOpacity(1), setIsActive(false))
-  //     : (setOpacity(0.5), setIsActive(true));
-  // };
 
   const checkValid = (opacity, isActive) => {
     setOpacity(opacity);
@@ -41,6 +34,25 @@ function Login() {
   function goToLists() {
     if (isActive === false) return navigate('/main-minkyoungkim');
   }
+
+  const handleLogin = () => {
+    fetch('/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result =>
+        isActive === false && result.token
+          ? goToLists()
+          : alert('로그인 실패!!')
+      );
+  };
 
   return (
     <main className={styles.main}>
@@ -70,9 +82,8 @@ function Login() {
           disabled={isActive}
           style={{ opacity: opacity }}
           type="submit"
-          onClick={() => {
-            goToLists();
-          }}
+          // onClick={goToLists}
+          onClick={handleLogin}
         >
           로그인
         </button>

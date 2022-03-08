@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 function CoffeeCard({ list }) {
   const navigate = useNavigate();
-  console.log(list);
 
   return (
     <div
