@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './Login.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
   const [idData, setIdData] = useState('');
   const [pwData, setPwData] = useState('');
+
   const btnActiveCondition = idData.includes('@') && pwData.length >= 5;
+
+  const navigate = useNavigate();
 
   function handleIdInput(e) {
     setIdData(e.target.value);
@@ -16,6 +19,8 @@ function Login() {
   }
 
   function handleLogin() {
+    navigate('/list-songyipark');
+
     fetch('http://52.79.143.176:8000/users/login', {
       method: 'POST',
       headers: {
@@ -52,22 +57,12 @@ function Login() {
             onChange={handlePwInput}
           />
           <button
-            className="login-btn"
+            className={`login-btn ${btnActiveCondition ? '' : 'login-opacity'}`}
             type="button"
             onClick={handleLogin}
-            style={{
-              opacity: btnActiveCondition ? '1.0' : '0.4',
-            }}
+            disabled={!btnActiveCondition}
           >
-            <Link
-              to="/list-songyipark"
-              className="login-link"
-              onClick={e => {
-                btnActiveCondition || e.preventDefault();
-              }}
-            >
-              로그인
-            </Link>
+            로그인
           </button>
         </article>
         <div className="pw-question">비밀번호를 잊으셨나요?</div>
