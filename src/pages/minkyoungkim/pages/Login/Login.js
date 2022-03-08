@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.scss';
 
@@ -21,11 +21,22 @@ function Login() {
     });
   };
 
-  const isLoginPassed = data => {
-    return data && data.email.includes('@') && data.password.length >= 7
-      ? (setOpacity(1), setIsActive(false))
-      : (setOpacity(0.5), setIsActive(true));
+  // const isLoginPassed = data => {
+  //   return data && data.email.includes('@') && data.password.length >= 7
+  //     ? (setOpacity(1), setIsActive(false))
+  //     : (setOpacity(0.5), setIsActive(true));
+  // };
+
+  const checkValid = (opacity, isActive) => {
+    setOpacity(opacity);
+    setIsActive(isActive);
   };
+
+  useEffect(() => {
+    email.includes('@') && password.length >= 7
+      ? checkValid(1, false)
+      : checkValid(0.5, true);
+  }, [email, password]);
 
   function goToLists() {
     if (isActive === false) return navigate('/main-minkyoungkim');
@@ -51,7 +62,7 @@ function Login() {
             type="password"
             name="password"
             placeholder="비밀번호"
-            onKeyUp={() => isLoginPassed(inputs)}
+            // onKeyUp={() => isLoginPassed(inputs)}
           />
         </div>
         <button

@@ -3,14 +3,39 @@ import { useState, useEffect } from 'react';
 import TopNav from '../../../components/TopNav/TopNav';
 import Footer from '../../../components/Footer/Footer';
 import styles from './Detail.module.scss';
+// import Comments from './Comments/Comments';
 import { useParams } from 'react-router-dom';
 
 function Detail() {
+  const pTag = React.createElement('p');
+
   const params = useParams();
   const [heart, setHeart] = useState('🤍');
-
   const changeHeartColor = () => {
     heart === '🤍' ? setHeart('❤️') : setHeart('🤍');
+  };
+
+  const [input, setInput] = useState({
+    comment: [],
+  });
+
+  const { comment } = input;
+
+  const handleInput = event => {
+    const { value, name } = event.target;
+
+    setInput({
+      ...input,
+      [name]: value,
+    });
+  };
+
+  const enterComment = event => {
+    if (event.key === 'Enter') return console.log('하이');
+  };
+
+  const inputComments = data => {
+    console.log(data);
   };
   const [details, setDetails] = useState({
     id: 0,
@@ -31,6 +56,7 @@ function Detail() {
         setDetails(data);
       });
   }, []);
+
   return (
     <>
       <div className={styles.container}>
@@ -83,7 +109,11 @@ function Detail() {
               </div>
               <section className={styles.reivewInputWrapper}>
                 <input
-                  onKey={() => {}}
+                  name="comment"
+                  onSubmit={inputComments(input)}
+                  value={comment}
+                  onChange={handleInput}
+                  onKeyPress={enterComment}
                   className={styles.reviewInput}
                   type="text"
                   placeholder="리뷰를 입력해주세요!"
