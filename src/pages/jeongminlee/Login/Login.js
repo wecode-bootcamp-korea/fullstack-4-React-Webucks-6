@@ -14,6 +14,36 @@ function Login() {
     setPassword(e.target.value);
   };
 
+  const handleJoin = () => {
+    fetch('/users/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: ID,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log(result));
+  };
+
+  const handleLogin = () => {
+    fetch('/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: ID,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log(result));
+  };
+
   return (
     <div className="body_Login">
       <div className="basis">
@@ -31,6 +61,7 @@ function Login() {
           placeholder="비밀번호"
         />
         <button
+          onClick={handleLogin}
           className={
             ID.includes('@') && password.length >= 5
               ? 'ActivatedButton'
@@ -39,6 +70,7 @@ function Login() {
         >
           로그인
         </button>
+        <button onClick={handleJoin}>회원가입</button>
         <div className="Find_Password">비밀번호를 잊으셨나요?</div>
       </div>
     </div>
