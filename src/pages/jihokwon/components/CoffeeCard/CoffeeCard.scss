@@ -1,17 +1,17 @@
 $prod-fontsize: 10px;
 
 @mixin imgs-size {
-  width: 210px;
-  height: 210px;
+  width: 180px;
+  height: 180px;
 }
 
 .card {
   display: flex;
-  padding-left: 15px;
+  padding-left: 40px;
   font-size: $prod-fontsize;
 
   li {
-    padding: 5px;
+    padding: 10px;
     text-align: center;
   }
 }

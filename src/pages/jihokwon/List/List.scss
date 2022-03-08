@@ -5,7 +5,7 @@ $prod-fontsize: 10px;
 
 @mixin menu {
   display: flex;
-  margin: 15px;
+  margin: 20px 40px;
   padding-top: 14px;
   padding-left: 20px;
   padding-bottom: 14px;
@@ -39,11 +39,11 @@ $prod-fontsize: 10px;
   @include menu;
   background-color: $menubar-backgroundColor;
 
-  li:first-child {
+  :first-child {
     font-size: 12px;
   }
 
-  li:last-child {
+  :last-child {
     padding-left: 5px;
     font-size: $menu-fontsize;
   }

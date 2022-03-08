@@ -1,0 +1,170 @@
+$font-color: lightgray;
+$backgrount-color: #e5e5e5;
+
+@mixin border-bottom($weight, $color) {
+  border-bottom: $weight solid $color;
+}
+
+section {
+  margin-bottom: 150px;
+}
+
+h1 {
+  font-weight: normal;
+}
+
+.coffee-title {
+  :first-child {
+    padding-left: 40px;
+    font-size: 30px;
+  }
+
+  :last-child {
+    padding-right: 40px;
+    font-size: 10px;
+    text-align: right;
+    color: $font-color;
+  }
+}
+.jh_container {
+  display: flex;
+  margin: 40px;
+
+  .img-box {
+    padding-right: 20px;
+
+    img {
+      width: 350px;
+      height: 400px;
+    }
+  }
+
+  .jh_details {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+    padding-left: 20px;
+
+    .details__info {
+      @include border-bottom(2px, black);
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+
+      ul {
+        :nth-child(1) {
+          font-weight: bold;
+          font-size: 25px;
+        }
+
+        :nth-child(2) {
+          padding: 10px 0;
+          font-size: 10px;
+        }
+      }
+
+      .fa-heart {
+        padding-right: 10px;
+        font-size: 20px;
+        color: lightgray;
+      }
+    }
+  }
+}
+
+.description {
+  @include border-bottom(1px, $font-color);
+  padding: 20px 0;
+  font-size: 13px;
+}
+
+.nutrition-title {
+  @include border-bottom(1px, $font-color);
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  padding: 25px 10px;
+
+  li {
+    list-style: none;
+  }
+}
+
+.kcal__container {
+  display: flex;
+  font-size: 13px;
+
+  .container__nutritions {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin: 15px 0;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+
+    li {
+      padding: 7px;
+    }
+  }
+}
+
+.first-box {
+  border-right: 1px dashed lightgray;
+}
+
+.allergy-info {
+  margin: 20px 0;
+  padding: 12px;
+  border-radius: 3px;
+  background-color: $backgrount-color;
+}
+
+.reviews {
+  @include border-bottom(2px, $backgrount-color);
+
+  margin: 15px 0px;
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+
+.reviews_li {
+  padding: 5px;
+  font-size: 10px;
+
+  .reviews__id {
+    padding-right: 2px;
+    font-weight: bold;
+  }
+}
+
+.input-box {
+  display: flex;
+  margin-top: 20px;
+  input {
+    display: flex;
+    flex-grow: 1;
+    padding: 10px;
+    border: white;
+    border-radius: 2px;
+    background-color: $backgrount-color;
+    color: $font-color;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 50px 0;
+  background-color: #333333;
+  color: white;
+  list-style: none;
+
+  li {
+    padding: 10px;
+    font-size: 10px;
+  }
+}

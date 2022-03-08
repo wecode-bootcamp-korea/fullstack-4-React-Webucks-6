@@ -22,6 +22,7 @@ function ListComponent() {
         setBrewList(data);
       });
   }, []);
+
   return (
     <div>
       <TopsNav />
