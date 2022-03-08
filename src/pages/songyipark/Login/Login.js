@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Login() {
   const [idData, setIdData] = useState('');
   const [pwData, setPwData] = useState('');
-  const btnActive = idData.includes('@') && pwData.length >= 5;
+  const btnActiveCondition = idData.includes('@') && pwData.length >= 5;
 
   function handleIdInput(e) {
     setIdData(e.target.value);
@@ -13,6 +13,21 @@ function Login() {
 
   function handlePwInput(e) {
     setPwData(e.target.value);
+  }
+
+  function handleLogin() {
+    fetch('http://52.79.143.176:8000/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: idData,
+        password: pwData,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log(result));
   }
 
   return (
@@ -38,15 +53,17 @@ function Login() {
           />
           <button
             className="login-btn"
+            type="button"
+            onClick={handleLogin}
             style={{
-              opacity: btnActive ? '1.0' : '0.4',
+              opacity: btnActiveCondition ? '1.0' : '0.4',
             }}
           >
             <Link
               to="/list-songyipark"
               className="login-link"
               onClick={e => {
-                btnActive || e.preventDefault();
+                btnActiveCondition || e.preventDefault();
               }}
             >
               로그인

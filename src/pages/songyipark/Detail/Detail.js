@@ -1,33 +1,35 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Detail.scss';
 import Nav from '../Component/Nav/Nav';
 import Footer from '../Component/Footer/Footer';
+// import Review from './Review';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 function Detail() {
-  // const [coffeeDetail, setCoffeeDetail] = useState({
-  //   "id": 0,
-  //   "name": "",
-  //   "engName": "",
-  //   "description": "",
-  //   "img": "images/coffeeImg/1.jpg",
-  //   "nutritionInfo": [],
-  //   "allergy": "",
-  //   "review": []
-  // });
-
-  // useEffect(() => {
-  //   fetch('/data/songyipark/1.json').then(res => res.json()).then(data => {
-  //     setCoffeeDetail(data)});
-  //   });
-  // });
-
   const [iconColor, setIconColor] = useState('black');
+
+  // const [inputValue, setInputValue] = useState('dkssud');
+  const [newReview, setNewReview] = useState([]);
 
   function changeColor() {
     iconColor === 'black' ? setIconColor('red') : setIconColor('black');
   }
+
+  function reviewInput(e) {
+    e.preventDefault();
+    let targetValue = e.target.value;
+    if (e.keyCode === 13) {
+      setNewReview(targetValue);
+    }
+    // console.log(newReview);
+    // console.log(targetValue);
+  }
+
+  // function reviewSubmit(e) {
+  //   e.preventDefault();
+  //   setNewReview(inputValue);
+  // }
 
   return (
     <div className="detail-full-page">
@@ -113,13 +115,29 @@ function Detail() {
                       모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다.
                     </span>
                   </p>
+                  {[newReview].map(review => (
+                    <p key={newReview} className="review-id">
+                      {review.slice(0, review.indexOf(' '))}
+                      <span className="review-comment">
+                        {review.slice(review.indexOf(' '))}
+                      </span>
+                    </p>
+                  ))}
                 </div>
               </section>
 
+              {/* <form onSubmit={reviewSubmit}> */}
               <input
                 className="review-input"
                 placeholder="리뷰를 입력해주세요."
+                onKeyUp={reviewInput}
+                value={() => {
+                  if ({ newReview }) {
+                    return '';
+                  }
+                }}
               />
+              {/* </form> */}
             </section>
           </article>
           <Footer />
