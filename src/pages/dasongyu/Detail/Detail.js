@@ -5,6 +5,7 @@ import Footer from '../components/Footer/Footer';
 
 function DetailComponent() {
   const [heartColor, setHeartColor] = useState('fa-regular fa-heart gray');
+
   const clickEvent = () => {
     heartColor === 'fa-regular fa-heart gray'
       ? setHeartColor('fa-solid fa-heart red')
@@ -85,26 +86,26 @@ function DetailComponent() {
             <div className="text-box-review">
               <p>리뷰</p>
             </div>
-            <div className="text-box-review-comment">
-              <p>
-                {' '}
-                <strong>coffee_lover</strong> 너무 맛있어요!
-              </p>
-              <p>
-                <strong>CHOCO7</strong> 오늘도 화이트 초콜릿 모카를 마시러
-                갑니다.
-              </p>
-              <p>
-                <strong>legend_dev</strong> 진짜 화이트 초콜릿 모카는 전설이다.
-                진짜 화이트 초콜릿 모카는 전설이다.
-              </p>
-            </div>
-
-            <input
-              type="text"
-              className="text-box-review-input"
-              placeholder="리뷰를 입력해주세요."
-            />
+            <form>
+              <div className="text-box-review-comment">
+                <p className="review">
+                  <strong>coffee_lover</strong> 너무 맛있어요!
+                </p>
+                <p className="review">
+                  <strong>CHOCO7</strong> 오늘도 화이트 초콜릿 모카를 마시러
+                  갑니다.
+                </p>
+                <p className="review">
+                  <strong>legend_dev</strong> 진짜 화이트 초콜릿 모카는
+                  전설이다. 진짜 화이트 초콜릿 모카는 전설이다.
+                </p>
+              </div>
+              <input
+                type="text"
+                className="text-box-review-input"
+                placeholder="리뷰를 입력해주세요."
+              />
+            </form>
           </div>
         </div>
       </div>

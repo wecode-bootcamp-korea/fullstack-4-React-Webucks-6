@@ -29,15 +29,30 @@ function LoginComponent() {
       : setOpacity(0.5);
   };
 
+  const handleLogin = () => {
+    fetch('http://52.79.143.176:8000/users/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: idState,
+        password: pwState,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => console.log(result));
+  };
+
   return (
-    <div>
+    <div className="webucks-login-box">
       <div className="login-box">
         <h1>WeBucks</h1>
         <div className="login-input">
           <input
             type="text"
             name="ID"
-            id="input-id"
+            id="id"
             placeholder="전화번호,사용자 이름 또는 이메일"
             value={idState}
             onChange={handleIDInput}
@@ -46,7 +61,7 @@ function LoginComponent() {
           <input
             type="password"
             name="Password"
-            id="input-pw"
+            id="pw"
             placeholder="비밀번호"
             value={pwState}
             onChange={handlePWInput}
@@ -59,6 +74,7 @@ function LoginComponent() {
               id="button"
               className={visible}
               style={{ opacity: opacity }}
+              onClick={handleLogin}
             >
               로그인
             </button>
