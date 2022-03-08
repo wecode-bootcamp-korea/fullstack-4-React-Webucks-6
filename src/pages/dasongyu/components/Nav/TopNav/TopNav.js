@@ -1,12 +1,17 @@
 import './TopNav.scss';
+import { Link } from 'react-router-dom';
 
 function TopNav() {
   return (
     <div className="nav-bar">
-      <h1>WeBucks</h1>
+      <Link to="/login-dasongyu">
+        <h1>WeBucks</h1>
+      </Link>
       <div className="nav">
         <span>COFFEE </span>
-        <span>MENU</span>
+        <span>
+          <Link to="/list-dasongyu">MENU</Link>
+        </span>
         <span>STORE</span>
         <span>WHAT'S NEW</span>
       </div>
