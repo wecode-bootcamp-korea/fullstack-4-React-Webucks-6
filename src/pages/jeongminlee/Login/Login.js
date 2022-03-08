@@ -14,6 +14,7 @@ function Login() {
     setPassword(e.target.value);
   };
 
+  //회원가입 해주는 함수
   const handleJoin = () => {
     fetch('/users/signup', {
       method: 'POST',
@@ -29,6 +30,7 @@ function Login() {
       .then(result => console.log(result));
   };
 
+  //로그인 해주는 함수
   const handleLogin = () => {
     fetch('/users/login', {
       method: 'POST',
