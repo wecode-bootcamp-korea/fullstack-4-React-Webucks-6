@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import './Detail.scss';
 import Nav from '../Component/Nav/Nav';
 import Footer from '../Component/Footer/Footer';
@@ -9,27 +9,29 @@ import { faHeart } from '@fortawesome/free-regular-svg-icons';
 function Detail() {
   const [iconColor, setIconColor] = useState('black');
 
-  // const [inputValue, setInputValue] = useState('dkssud');
-  const [newReview, setNewReview] = useState([]);
-
-  function changeColor() {
+  const changeColor = () => {
     iconColor === 'black' ? setIconColor('red') : setIconColor('black');
-  }
+  };
 
-  function reviewInput(e) {
-    e.preventDefault();
-    let targetValue = e.target.value;
-    if (e.keyCode === 13) {
-      setNewReview(targetValue);
-    }
-    // console.log(newReview);
-    // console.log(targetValue);
-  }
+  const [newReviewValue, setNewReviewValue] = useState('');
+  const [reviewList, setReviewList] = useState([]);
 
-  // function reviewSubmit(e) {
-  //   e.preventDefault();
-  //   setNewReview(inputValue);
-  // }
+  const reviewInput = e => {
+    setNewReviewValue(e.target.value);
+  };
+
+  const newReview = useRef(0);
+
+  const makeReviewList = e => {
+    const Review = {
+      key: newReview.current,
+      id: newReviewValue.slice(0, newReviewValue.indexOf(' ')),
+      comment: newReviewValue.slice(newReviewValue.indexOf(' ')),
+    };
+    setReviewList(reviewList.concat(Review));
+    newReview.current += 1;
+    setNewReviewValue('');
+  };
 
   return (
     <div className="detail-full-page">
@@ -115,29 +117,31 @@ function Detail() {
                       모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다.
                     </span>
                   </p>
-                  {[newReview].map(review => (
-                    <p key={newReview} className="review-id">
-                      {review.slice(0, review.indexOf(' '))}
+                  {reviewList.map(review => (
+                    <p key={review['key']} className="review-id">
+                      {review['id']}
                       <span className="review-comment">
-                        {review.slice(review.indexOf(' '))}
+                        {review['comment']}
                       </span>
                     </p>
                   ))}
                 </div>
               </section>
 
-              {/* <form onSubmit={reviewSubmit}> */}
-              <input
-                className="review-input"
-                placeholder="리뷰를 입력해주세요."
-                onKeyUp={reviewInput}
-                value={() => {
-                  if ({ newReview }) {
-                    return '';
-                  }
+              <form
+                onSubmit={e => {
+                  e.preventDefault();
+                  makeReviewList();
                 }}
-              />
-              {/* </form> */}
+              >
+                <input
+                  type="text"
+                  className="review-input"
+                  placeholder="리뷰를 입력해주세요."
+                  value={newReviewValue}
+                  onChange={reviewInput}
+                />
+              </form>
             </section>
           </article>
           <Footer />
