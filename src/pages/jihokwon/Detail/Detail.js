@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import TopsNav from '../components/TopsNav/TopsNav';
 import './Detail.scss';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 function DetailComponent() {
+  const [changeRed, setChangeRed] = useState('fa-regular');
+  const isLike = () => {
+    changeRed === 'fa-regular'
+      ? setChangeRed('fa-solid')
+      : setChangeRed('fa-regular');
+  };
   return (
     <div>
       <TopsNav />
-      <section>
+      <section className="detail-section">
         <h1>
           <ul className="coffee-title">
             <li>콜드 브루</li>
@@ -27,7 +33,13 @@ function DetailComponent() {
                 <li>바닐라 크림 콜드 브루</li>
                 <li>Vanilla Cream Cold Brew</li>
               </ul>
-              <i className="fa-regular fa-heart fa-3x" />
+              <i
+                className={`
+                  ${changeRed} fa-heart`}
+                onClick={() => {
+                  isLike();
+                }}
+              />
             </div>
             <div className="description">
               콜드 브루에 더해진 바닐라 크림으로 깔끔하면서 달콤한 브루를 새롭게
