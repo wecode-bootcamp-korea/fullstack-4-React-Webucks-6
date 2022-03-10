@@ -1,134 +1,138 @@
-$bg-color : #eeeeee;
+$bg-color: #eeeeee;
 
-.full-page {
-    display: flex;
-    justify-content: center;
+.detail-full-page {
+  display: flex;
+  justify-content: center;
 }
-  
-.container {
-    width: 70%;
+
+.detail-container {
+  width: 70%;
 }
-  
-.coffee-h1{
-    font-size: 20px;
-    font-weight: 600;
+
+.coffee-h1 {
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .coffee-classify {
-    margin-bottom: 20px;
-    color: gray;
-    font-size: 12px;
-    text-align: right;
+  margin-bottom: 20px;
+  color: gray;
+  font-size: 12px;
+  text-align: right;
 }
 
-.detail-article{
+.detail-article-wrapper {
+  display: flex;
+  margin-top: 30px;
+
+  .white-choco-img {
+    width: 380px;
+    height: 330px;
+    margin-right: 40px;
+  }
+}
+
+.menu-section {
+  position: relative;
+  width: 100%;
+
+  .menu-title {
     display: flex;
-    margin-top: 30px;
-    
-    .white-choco-img {
-        width: 380px;
-        height: 330px;
-        margin-right: 40px;
-    }
-}
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+    padding: 0 10px 10px 0;
+    border-bottom: 2px solid black;
 
-.menu-section{
-    position: relative;
+    .menu-h2 {
+      margin-bottom: 5px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .menu-h3 {
+      font-size: 12px;
+      font-weight: 350;
+    }
+
+    .fa-solid {
+      color: red;
+    }
+  }
+
+  .menu-explain {
+    line-height: 1.3em;
+    font-size: 15px;
+  }
+
+  .nutri-info {
+    margin: 20px 0;
+    padding: 20px 0;
+    border-top: 2px solid $bg-color;
+    border-bottom: 2px solid $bg-color;
+
+    .nutri-info-left {
+      padding-left: 20px;
+    }
+
+    .nutri-info-right {
+      right: 20px;
+      position: absolute;
+    }
+  }
+
+  .kcal-table-grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 10px;
+
+    .kcal-align-right {
+      padding-right: 10px;
+      text-align: right;
+    }
+
+    .line-dashed {
+      border-right: 2px dashed $bg-color;
+    }
+  }
+
+  .allergy {
+    margin: 40px 0;
+    padding: 15px;
+    background-color: $bg-color;
+  }
+
+  .review-h4 {
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid $bg-color;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .review-id-comment {
+    .review-id {
+      width: 600px;
+      padding: 4px 0;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .review-comment {
+      margin-left: 5px;
+      font-weight: 400;
+    }
+  }
+
+  .review-input {
+    display: inline-block;
     width: 100%;
-
-    .menu-title{
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        margin-bottom: 20px;
-        padding: 0 10px 10px 0;
-        border-bottom: 2px solid black;
-    
-        .menu-h2{
-            margin-bottom: 5px;
-            font-size: 20px;
-            font-weight: 600;
-        }
-    
-        .menu-h3{
-            font-size: 12px;
-            font-weight: 350;
-        }
-    }
-
-    .menu-explain{
-        line-height: 1.3em;
-        font-size: 15px;
-    }
-    
-    .nutri-info{
-        margin: 20px 0;
-        padding: 20px 0;
-        border-top: 2px solid $bg-color;
-        border-bottom: 2px solid $bg-color;
-        
-        .nutri-info-left {
-            padding-left: 20px;
-        }
-        
-        .nutri-info-right {
-            right: 20px;
-            position: absolute;
-        }
-    }
-
-    .kcal-table-grid{
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: repeat(4, 1fr);
-        row-gap: 10px;
-    
-        .kcal-align-right{
-            padding-right: 10px;
-            text-align: right;
-        }
-    
-        .line-dashed{
-            border-right: 2px dashed $bg-color;
-        }
-    }
-    
-    .allergy{
-        margin: 40px 0;
-        padding: 15px;
-        background-color: $bg-color;
-    }
-    
-    .review-h4{
-        padding-bottom: 5px;
-        margin-bottom: 15px;
-        border-bottom: 2px solid $bg-color;
-        font-size: 17px;
-        font-weight: 500;
-    }
-    
-    .review-id-comment{
-        .review-id{
-            width: 600px;
-            padding: 4px 0;
-            font-weight: 600;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .review-comment{
-            margin-left : 5px;
-            font-weight: 400;
-        }
-    }
-    
-    .review-input{
-        display: inline-block;
-        width: 100%;
-        margin-top: 20px;
-        padding: 10px;
-        border: none;
-        background-color: $bg-color;
-    }
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    background-color: $bg-color;
+  }
 }

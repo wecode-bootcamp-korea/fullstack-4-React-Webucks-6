@@ -1,22 +1,49 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import './Detail.scss';
 import Nav from '../Component/Nav/Nav';
 import Footer from '../Component/Footer/Footer';
 
 function Detail() {
+  const [faIcon, setFaIcon] = useState('fa-regular');
+
+  const changeIcon = () => {
+    faIcon === 'fa-regular' ? setFaIcon('fa-solid') : setFaIcon('fa-regular');
+  };
+
+  const [newReviewValue, setNewReviewValue] = useState('');
+  const [reviewList, setReviewList] = useState([]);
+
+  const reviewInput = e => {
+    setNewReviewValue(e.target.value);
+  };
+
+  const newReview = useRef(0);
+
+  const makeReviewList = () => {
+    const Review = {
+      key: newReview.current,
+      id: newReviewValue.slice(0, newReviewValue.indexOf(' ')),
+      comment: newReviewValue.slice(newReviewValue.indexOf(' ')),
+    };
+    setReviewList(reviewList.concat(Review));
+    newReview.current += 1;
+    setNewReviewValue('');
+  };
+
   return (
-    <div className="full-page">
-      <div className="container">
+    <div className="detail-full-page">
+      <div className="detail-container">
         <Nav />
         <main>
           <header>
             <h1 className="coffee-h1">콜드 브루</h1>
             <div className="coffee-classify">
-              홈 > MENU > 음료 > 에스프레소 > 화이트 초콜릿 모카
+              홈 {'>'} MENU {'>'} 음료 {'>'} 에스프레소 {'>'} 화이트 초콜릿
+              모카;
             </div>
           </header>
 
-          <article className="detail-article">
+          <article className="detail-article-wrapper">
             <img
               className="white-choco-img"
               alt="화이트 초콜릿 모카 사진"
@@ -29,7 +56,7 @@ function Detail() {
                   <h2 className="menu-h2">화이트 초콜릿 모카</h2>
                   <h3 className="menu-h3">White Chocolate Mocha</h3>
                 </div>
-                <i className="far fa-heart" />
+                <i className={`${faIcon} fa-heart`} onClick={changeIcon} />
               </header>
 
               <p className="menu-explain">
@@ -83,13 +110,31 @@ function Detail() {
                       모카는 전설이다. 진짜 화이트 초콜릿 모카는 전설이다.
                     </span>
                   </p>
+                  {reviewList.map(review => (
+                    <p key={review['key']} className="review-id">
+                      {review['id']}
+                      <span className="review-comment">
+                        {review['comment']}
+                      </span>
+                    </p>
+                  ))}
                 </div>
               </section>
 
-              <input
-                className="review-input"
-                placeholder="리뷰를 입력해주세요."
-              />
+              <form
+                onSubmit={e => {
+                  e.preventDefault();
+                  makeReviewList();
+                }}
+              >
+                <input
+                  type="text"
+                  className="review-input"
+                  placeholder="리뷰를 입력해주세요."
+                  value={newReviewValue}
+                  onChange={reviewInput}
+                />
+              </form>
             </section>
           </article>
           <Footer />

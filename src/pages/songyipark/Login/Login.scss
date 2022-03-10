@@ -1,18 +1,18 @@
-$border-style : 2px solid #e0e0e0;
+$border-style: 2px solid #e0e0e0;
 
 @mixin flex-column {
   display: flex;
   flex-direction: column;
-} 
+}
 
-.login-full-page{
+.login-full-page {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.login-container{
+.login-container {
   @include flex-column;
   justify-content: center;
   align-items: center;
@@ -27,11 +27,12 @@ $border-style : 2px solid #e0e0e0;
   }
 }
 
-.login-section{
+.login-section {
   @include flex-column;
 }
 
-.id, .pw {
+.id,
+.pw {
   width: 300px;
   margin-bottom: 20px;
   padding: 10px;
@@ -42,16 +43,23 @@ $border-style : 2px solid #e0e0e0;
 }
 
 .login-btn {
-  padding : 10px;
-  border : none;
+  padding: 10px;
+  border: none;
   border-radius: 5px;
   background-color: #4fc3f7;
-  color: white;
   font-weight: 600;
-  opacity: 0.4;
+}
+
+.login-link {
+  text-decoration: none;
+  color: white;
 }
 
 .pw-question {
   padding-top: 100px;
   color: #0288d1;
+}
+
+.login-opacity {
+  opacity: 0.4;
 }
