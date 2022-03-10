@@ -2,15 +2,12 @@ import React, { useState, useRef } from 'react';
 import './Detail.scss';
 import Nav from '../Component/Nav/Nav';
 import Footer from '../Component/Footer/Footer';
-// import Review from './Review';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 function Detail() {
-  const [iconColor, setIconColor] = useState('black');
+  const [faIcon, setFaIcon] = useState('fa-regular');
 
-  const changeColor = () => {
-    iconColor === 'black' ? setIconColor('red') : setIconColor('black');
+  const changeIcon = () => {
+    faIcon === 'fa-regular' ? setFaIcon('fa-solid') : setFaIcon('fa-regular');
   };
 
   const [newReviewValue, setNewReviewValue] = useState('');
@@ -22,7 +19,7 @@ function Detail() {
 
   const newReview = useRef(0);
 
-  const makeReviewList = e => {
+  const makeReviewList = () => {
     const Review = {
       key: newReview.current,
       id: newReviewValue.slice(0, newReviewValue.indexOf(' ')),
@@ -59,11 +56,7 @@ function Detail() {
                   <h2 className="menu-h2">화이트 초콜릿 모카</h2>
                   <h3 className="menu-h3">White Chocolate Mocha</h3>
                 </div>
-                <FontAwesomeIcon
-                  icon={faHeart}
-                  onClick={changeColor}
-                  style={{ color: iconColor }}
-                />
+                <i className={`${faIcon} fa-heart`} onClick={changeIcon} />
               </header>
 
               <p className="menu-explain">
