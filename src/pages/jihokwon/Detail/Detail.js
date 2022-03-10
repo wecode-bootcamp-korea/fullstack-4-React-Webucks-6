@@ -1,10 +1,36 @@
 import React, { useState } from 'react';
 import TopsNav from '../components/TopsNav/TopsNav';
+// import Comment from '../components/Comment/Comment';
 import './Detail.scss';
 // import { Link } from 'react-router-dom';
 
 function DetailComponent() {
+  const [inputValue, setInputValue] = useState('');
+  const [commentArr, setCommentArr] = useState([
+    { id: '', comment: inputValue },
+  ]);
   const [changeRed, setChangeRed] = useState('fa-regular');
+
+  // 댓글인풋값 받는 함수
+  const handleInput = event => {
+    setInputValue(event.target.value);
+  };
+
+  //엔터 했을 때 코멘트를 배열에 저장하는 함수
+  const addComment = event => {
+    let newComment = event.target.value;
+    setInputValue(newComment);
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      if (newComment !== '') {
+        const array = [...commentArr];
+        array.push({ id: 'guest', comment: newComment });
+        setCommentArr(array);
+        setInputValue('');
+      }
+    }
+  };
+
   const isLike = () => {
     changeRed === 'fa-regular'
       ? setChangeRed('fa-solid')
@@ -82,21 +108,34 @@ function DetailComponent() {
             <div className="allergy-info">알레르기 유발 요인: 우유</div>
             <ul>
               <li className="reviews">리뷰</li>
-              <li className="reviews_li">
-                <span className="reviews__id">coffee_lover</span>
-                <span>너무 맛있어요!</span>
+              <li className="comment_li">
+                <li className="comment__id">coffee_lover</li>
+                <li>너무 맛있어요!</li>
               </li>
-              <li className="reviews_li">
-                <span className="reviews__id">CHOCO7</span>
+              <li className="comment_li">
+                <span className="comment__id">CHOCO7</span>
                 <span>오늘도 바크콜을 마시러 갑니다.</span>
               </li>
-              <li className="reviews_li">
-                <span className="reviews__id">legend_dev</span>
-                <span>진짜 바크콜은 전설이다. 진짜 화이팅.</span>
+              <li className="comment_li">
+                <li className="comment__id">legend_dev</li>
+                <li>진짜 바크콜은 전설이다. 진짜 화이팅.</li>
               </li>
+              {commentArr.map(comments => (
+                <li className="comment_li" key={comments.id}>
+                  <li className="comment__id">{comments.id}</li>
+                  <li>{comments.comment}</li>
+                </li>
+              ))}
             </ul>
             <div className="input-box">
-              <input type="text" placeholder="리뷰를 입력해주세요." />
+              <input
+                type="text"
+                placeholder="리뷰를 입력해주세요."
+                value={inputValue}
+                onChange={handleInput}
+                onKeyUp={addComment}
+              />
+              <button>전송</button>
             </div>
           </div>
         </div>

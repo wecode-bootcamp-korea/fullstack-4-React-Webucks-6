@@ -129,17 +129,16 @@ h1 {
 
 .reviews {
   @include border-bottom(2px, $backgrount-color);
-
   margin: 15px 0px;
   padding-bottom: 5px;
   font-size: 20px;
 }
-
-.reviews_li {
+.comment_li {
+  display: flex;
   padding: 5px;
   font-size: 10px;
 
-  .reviews__id {
+  .comment__id {
     padding-right: 2px;
     font-weight: bold;
   }
@@ -149,13 +148,18 @@ h1 {
   display: flex;
   margin-top: 20px;
   input {
-    display: flex;
     flex-grow: 1;
+    margin-right: 5px;
     padding: 10px;
     border: white;
     border-radius: 2px;
     background-color: $backgrount-color;
-    color: $font-color;
+  }
+  button {
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 2px;
+    background-color: white;
   }
 }
 
