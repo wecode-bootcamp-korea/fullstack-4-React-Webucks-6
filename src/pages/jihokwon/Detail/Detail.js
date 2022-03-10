@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import TopsNav from '../components/TopsNav/TopsNav';
-// import Comment from '../components/Comment/Comment';
 import './Detail.scss';
 // import { Link } from 'react-router-dom';
 
@@ -17,18 +16,26 @@ function DetailComponent() {
   };
 
   //엔터 했을 때 코멘트를 배열에 저장하는 함수
-  const addComment = event => {
-    let newComment = event.target.value;
-    setInputValue(newComment);
+  const addCommentEnter = event => {
+    handleInput(event);
     if (event.keyCode === 13) {
       event.preventDefault();
-      if (newComment !== '') {
+      if (inputValue !== '') {
         const array = [...commentArr];
-        array.push({ id: 'guest', comment: newComment });
+        array.push({ id: 'guest', comment: inputValue });
         setCommentArr(array);
         setInputValue('');
       }
     }
+  };
+
+  const addCommentClick = event => {
+    event.preventDefault();
+    handleInput(event);
+    const arr = [...commentArr];
+    arr.push({ id: 'guest', comment: inputValue });
+    setCommentArr(arr);
+    setInputValue('');
   };
 
   const isLike = () => {
@@ -36,6 +43,7 @@ function DetailComponent() {
       ? setChangeRed('fa-solid')
       : setChangeRed('fa-regular');
   };
+
   return (
     <div>
       <TopsNav />
@@ -133,9 +141,11 @@ function DetailComponent() {
                 placeholder="리뷰를 입력해주세요."
                 value={inputValue}
                 onChange={handleInput}
-                onKeyUp={addComment}
+                onKeyUp={addCommentEnter}
               />
-              <button>전송</button>
+              <button type="button" onClick={addCommentClick}>
+                ENTER
+              </button>
             </div>
           </div>
         </div>
