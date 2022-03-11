@@ -3,40 +3,32 @@ import { useState, useEffect } from 'react';
 import TopNav from '../../../components/TopNav/TopNav';
 import Footer from '../../../components/Footer/Footer';
 import styles from './Detail.module.scss';
-// import Comments from './Comments/Comments';
+import Comments from './Comments/Comments';
 import { useParams } from 'react-router-dom';
 
 function Detail() {
-  const pTag = React.createElement('p');
-
   const params = useParams();
   const [heart, setHeart] = useState('🤍');
   const changeHeartColor = () => {
     heart === '🤍' ? setHeart('❤️') : setHeart('🤍');
   };
 
-  const [input, setInput] = useState({
-    comment: [],
-  });
+  // const [input, setInput] = useState({
+  //   userId: '',
+  //   comment: '',
+  // });
 
-  const { comment } = input;
+  // const { comment } = input;
 
-  const handleInput = event => {
-    const { value, name } = event.target;
+  // const handleInput = event => {
+  //   const { value, name } = event.target;
 
-    setInput({
-      ...input,
-      [name]: value,
-    });
-  };
+  //   setInput({
+  //     ...input,
+  //     [name]: value,
+  //   });
+  // };
 
-  const enterComment = event => {
-    if (event.key === 'Enter') return console.log('하이');
-  };
-
-  const inputComments = data => {
-    console.log(data);
-  };
   const [details, setDetails] = useState({
     id: 0,
     name: '',
@@ -95,7 +87,8 @@ function Detail() {
               </div>
               <div className={styles.allergy}>알레르기 유발 요인 : 우유</div>
             </div>
-            <div className={styles.review}>
+            <Comments />
+            {/* <div className={styles.review}>
               <span className={styles.reviewTitle}>리뷰</span>
               <div className={styles.reviewBox}>
                 {details.review.map((review, index) => {
@@ -103,6 +96,7 @@ function Detail() {
                     <p key={index}>
                       <span className={styles.userId}>{review.userId}</span>
                       {review.comment}
+                      <span>{}</span>
                     </p>
                   );
                 })}
@@ -113,13 +107,14 @@ function Detail() {
                   onSubmit={inputComments(input)}
                   value={comment}
                   onChange={handleInput}
-                  onKeyPress={enterComment}
+                  onKeyPress={addComment}
                   className={styles.reviewInput}
                   type="text"
                   placeholder="리뷰를 입력해주세요!"
                 />
+                <button type="button">등록</button>
               </section>
-            </div>
+            </div> */}
           </aside>
         </section>
       </div>
