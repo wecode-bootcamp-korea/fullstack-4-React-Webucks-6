@@ -4,37 +4,43 @@ import { useEffect, useState } from 'react';
 import { useMatch, useParams } from 'react-router-dom';
 
 function Detail() {
-  const params = useParams();
+  let params = useParams();
 
-  // const [newReview, setNewReview] = useState();
-  const reviewWrite = function (e) {
+  let [newID, setNewID] = useState('');
+  let [newContent, setNewContent] = useState(''); // 새 리뷰
+
+  let writeID = function (e) {
+    setNewID(e.target.value);
     if (e.keyCode === 13) {
-      const ID = prompt('ID를 입력해주세요.');
-
-      const review = document.querySelector('.explain7_explain');
-      const reviews = document.querySelector('.reviews');
-      const review_value = document.querySelector('.explain7_explain').value;
-
-      const div = document.createElement('div'); // 리뷰를 감싸줄 div 태그 생성
-      const span_ID = document.createElement('span'); // 리뷰 아이디를 감싸줄 span 태그 생성
-      const span_content = document.createElement('span'); // 리뷰 내용을 감싸줄 span 태그 생성
-
-      div.setAttribute('class', 'review'); // 리뷰를 감싸줄 div에 클래스명 지정.
-      span_ID.setAttribute('class', 'review_id'); // 리뷰 아이디를 감싸줄 span 태그에 클래스명 지정
-      span_content.setAttribute('class', 'review_content'); // 리뷰 내용을 감싸줄 span 태그에 클래스명 지정
-
-      reviews.appendChild(div);
-      div.appendChild(span_ID);
-      div.appendChild(span_content);
-
-      span_ID.innerText = ID; // ID 입력
-      span_content.innerText = review_value; // 리뷰내용 입력
-
-      review.value = null; // 입력했던 텍스트값 초기화.
+      document.querySelector('.explain7_review').focus();
     }
   };
 
-  const [coffeeDetail, setCoffeeDetail] = useState({
+  let writeContent = function (e) {
+    setNewContent(e.target.value);
+    if (e.keyCode === 13) {
+      addReview();
+      e.target.value = '';
+      // setNewID('');
+      // setNewContent('');
+    }
+  };
+  let [newAddReview, setNewAddReview] = useState([]);
+
+  let addReview = function (e) {
+    setNewID('');
+    setNewContent('');
+    setNewAddReview([
+      ...newAddReview,
+      {
+        ID: newID,
+        content: newContent,
+      },
+    ]);
+    // console.log(newAddReview);
+  };
+
+  let [coffeeDetail, setCoffeeDetail] = useState({
     id: 0,
     name: '',
     engName: '',
@@ -53,10 +59,10 @@ function Detail() {
       });
   }, []);
 
-  const [redHeart, setRedHeart] = useState('false');
-  const [emptyHeart, setEmptyHeart] = useState('true');
+  let [redHeart, setRedHeart] = useState('false');
+  let [emptyHeart, setEmptyHeart] = useState('true');
 
-  const heartClick = e => {
+  let heartClick = e => {
     if (emptyHeart) {
       setEmptyHeart(false);
       setRedHeart(true);
@@ -73,7 +79,7 @@ function Detail() {
         <div className="second_nav">
           <div className="big_name">{coffeeDetail.type}</div>
           <div className="Kategorie">
-            홈 > MENU > 음료 > 에스프레소 > 화이트 초콜릿 모카
+            홈 &gt; MENU &gt; 음료 &gt; 에스프레소 &gt; 화이트 초콜릿 모카
           </div>
         </div>
         <div className="picture_explain">
@@ -137,7 +143,7 @@ function Detail() {
             <div className="explain6">
               <div className="review_title">리뷰</div>
               <hr />
-              <div className="reviews">
+              <ul className="reviews">
                 <div className="review">
                   <span className="review_id">coffee_lover</span>
                   <span className="review_content">너무 맛있어요!</span>
@@ -155,11 +161,30 @@ function Detail() {
                     모카는 전설이다. 진짜 화이트 초···
                   </span>
                 </div>
-              </div>
+                {/* ------------------------------------------------------ */}
+                {newAddReview.map(el => {
+                  return (
+                    <div className="review">
+                      <span className="review_id">{el.ID}</span>
+                      <span className="review_content">{el.content}</span>
+                    </div>
+                  );
+                })}
+                {/* <div className="review">
+                  <span className="review_id">{newInput.name}</span>
+                  <span className="review_content">{newInput.content}</span>
+                </div> */}
+                {/* ------------------------------------------------------ */}
+              </ul>
               <div className="explain7">
                 <input
-                  onKeyUp={reviewWrite}
-                  className="explain7_explain"
+                  onKeyUp={writeID}
+                  className="explain7_ID"
+                  placeholder="ID"
+                />
+                <input
+                  onKeyUp={writeContent}
+                  className="explain7_review"
                   placeholder="리뷰를 입력해주세요."
                 />
               </div>
