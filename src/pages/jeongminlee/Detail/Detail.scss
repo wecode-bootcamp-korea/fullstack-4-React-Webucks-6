@@ -6,11 +6,12 @@
 }
 
 .body_detail {
-  margin: 10px 10px;
+  margin: 0;
 }
 
 .right_detail {
   margin-left: 40px;
+  margin-right: 0;
 }
 
 .nav_span {
@@ -47,7 +48,7 @@
 .picture_explain {
   margin-top: 20px;
   display: flex;
-  // justify-content: space-between;
+  justify-content: space-between;
   // flex-wrap: wrap;
   // border : 1px solid black;
 }
@@ -179,9 +180,9 @@ td:nth-of-type(odd) {
 }
 
 .bottom {
-  width: 1450px;
+  width: 100%;
   background-color: rgba(10, 10, 10, 0.75);
-  margin: 40px auto 0px auto;
+  margin: 90px auto 0px 0px;
   display: flex;
   justify-content: space-around;
   padding: 40px 10px;

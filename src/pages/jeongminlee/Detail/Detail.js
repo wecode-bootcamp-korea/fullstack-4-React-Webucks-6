@@ -228,7 +228,7 @@ function Detail() {
         </div>
       </div>
 
-      <div className="bottom">
+      <footer className="bottom">
         <div className="bottom_list1">
           <div className="highest">COMPANY</div>
           한눈에 보기
@@ -275,7 +275,7 @@ function Detail() {
         <span className="bottom_list6">
           <div className="highest">WEBUCKS</div>
         </span>
-      </div>
+      </footer>
     </div>
   );
 }
