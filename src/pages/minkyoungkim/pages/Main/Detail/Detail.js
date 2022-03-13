@@ -1,101 +1,120 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import TopNav from '../../../components/TopNav/TopNav';
 import Footer from '../../../components/Footer/Footer';
-import './Detail.scss';
+import styles from './Detail.module.scss';
+import Comments from './Comments/Comments';
+import { useParams } from 'react-router-dom';
 
 function Detail() {
+  const params = useParams();
+  const [heart, setHeart] = useState('🤍');
+  const changeHeartColor = () => {
+    heart === '🤍' ? setHeart('❤️') : setHeart('🤍');
+  };
+
+  // const [input, setInput] = useState({
+  //   userId: '',
+  //   comment: '',
+  // });
+
+  // const { comment } = input;
+
+  // const handleInput = event => {
+  //   const { value, name } = event.target;
+
+  //   setInput({
+  //     ...input,
+  //     [name]: value,
+  //   });
+  // };
+
+  const [details, setDetails] = useState({
+    id: 0,
+    name: '',
+    engName: '',
+    description: '',
+    nutritionInfo: [],
+    allergy: '',
+    review: [],
+  });
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/data/${params.id}.json`, {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => {
+        setDetails(data);
+      });
+  }, []);
+
   return (
     <>
-      <div className="container">
+      <div className={styles.container}>
         <TopNav />
-        <section className="contents">
-          <article className="imageBox">
-            <img src="/images/minkyoungkim/coffeeImg1.jpeg" alt="coffee" />
+        <section className={styles.contents}>
+          <article className={styles.imageBox}>
+            <img src={`/${details.img}`} alt={details.name} />
           </article>
-          <aside className="details">
-            <div className="coffee-title">
-              <h2>화이트 초콜릿 모카</h2>
-              <p>White Chocolate Mocha</p>
-              <button className="heart">🤍</button>
+          <aside className={styles.details}>
+            <div className={styles.coffeeTitle}>
+              <h2>{details.name}</h2>
+              <p>{details.engName}</p>
+              <button onClick={changeHeartColor} className={styles.heart}>
+                {heart}
+              </button>
             </div>
-            <div className="description">
-              달콤하고 부드러운 화이트 초콜릿 시럽과 에스프레소를 스팀 밀크와
-              섞어 휘핑크림으로 마무 리한 음료를 달콤함과 강렬한 에스프레소가
-              부드럽게 어우러진 커피
-            </div>
-            <div className="product-info">
-              <div className="product-head">
+            <div className={styles.description}>{details.description}</div>
+            <div className={styles.productInfo}>
+              <div className={styles.productHead}>
                 <h3>제품 영양 정보</h3>
                 <h3>Tall(톨) / 355ml(12 fl oz)</h3>
               </div>
-              <div className="product-content">
+              <div className={styles.productContent}>
                 <ul>
-                  <li>
-                    <dl>
-                      <dt>1회 제공량 (kcal)</dt>
-                      <dd>345</dd>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl>
-                      <dt>포화지방 (g)</dt>
-                      <dd>11</dd>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl>
-                      <dt>단백질 (g)</dt>
-                      <dd>11</dd>
-                    </dl>
-                  </li>
-                </ul>
-                <ul>
-                  <li>
-                    <dl>
-                      <dt>나트륨 (mg)</dt>
-                      <dd>150</dd>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl>
-                      <dt>당류 (g)</dt>
-                      <dd>35</dd>
-                    </dl>
-                  </li>
-                  <li>
-                    <dl>
-                      <dt>카페인 (mg)</dt>
-                      <dd>75</dd>
-                    </dl>
-                  </li>
+                  {details.nutritionInfo.map((info, index) => {
+                    return (
+                      <li key={index}>
+                        <dl>
+                          <dt>{info.name}</dt>
+                          <dd>{info.percent}</dd>
+                        </dl>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
-              <div className="allergy">알레르기 유발 요인 : 우유</div>
+              <div className={styles.allergy}>알레르기 유발 요인 : 우유</div>
             </div>
-            <div className="review">
-              <span className="review-title">리뷰</span>
-              <div className="review-box">
-                <p>
-                  <span className="userId">coffeelovers</span>너무 맛있어요!
-                </p>
-                <p>
-                  <span className="userId">choco</span>오늘도 화이트 초콜릿모카
-                  먹으러 갑시다
-                </p>
-                <p>
-                  <span className="userId">legend_dev</span>진짜 화이트 초콜릿
-                  모카는 전설이다.진짜 화이트 초콜릿 모카는 전설이다.진짜 화이트
-                  초콜릿 모카는 전설이다.
-                </p>
+            <Comments />
+            {/* <div className={styles.review}>
+              <span className={styles.reviewTitle}>리뷰</span>
+              <div className={styles.reviewBox}>
+                {details.review.map((review, index) => {
+                  return (
+                    <p key={index}>
+                      <span className={styles.userId}>{review.userId}</span>
+                      {review.comment}
+                      <span>{}</span>
+                    </p>
+                  );
+                })}
               </div>
-              <section className="reivewInput-wrapper">
+              <section className={styles.reivewInputWrapper}>
                 <input
-                  className="reviewInput"
+                  name="comment"
+                  onSubmit={inputComments(input)}
+                  value={comment}
+                  onChange={handleInput}
+                  onKeyPress={addComment}
+                  className={styles.reviewInput}
                   type="text"
                   placeholder="리뷰를 입력해주세요!"
                 />
+                <button type="button">등록</button>
               </section>
-            </div>
+            </div> */}
           </aside>
         </section>
       </div>
