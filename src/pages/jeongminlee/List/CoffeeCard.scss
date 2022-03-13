@@ -1,0 +1,15 @@
+.kind {
+  background-color: rgb(244, 244, 242);
+  padding: 19px 25px;
+  margin-bottom: 20px;
+}
+
+.coffee {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+span > .fa-solid {
+  color: red;
+}

@@ -1,28 +1,128 @@
 import './Detail.scss';
 import TopNav from '../List/TopNav';
+import { useEffect, useState } from 'react';
+import { useMatch, useParams } from 'react-router-dom';
 
 function Detail() {
+  let params = useParams();
+
+  let [newId, setNewId] = useState(0); // 새 리뷰의 key
+  let [newName, setNewName] = useState(''); // 새 리뷰를 쓸 아이디
+  let [newContent, setNewContent] = useState(''); // 새 리뷰의 내용
+  let [newAddReview, setNewAddReview] = useState([]); // 새 리뷰
+  let [reviewHeart, setReviewHeart] = useState(false);
+
+  let reviewHeartClick = e => {
+    // let filtered = newAddReview.filter(el => el.ID === id);
+    // if (filtered[0].like === false) {
+    //   setReviewHeart((filtered[0].like = true));
+    // } else if (filtered[0].like === true) {
+    //   setReviewHeart((filtered[0].like = false));
+    // }
+
+    if (e.like === false) {
+      setReviewHeart((e.like = true));
+    } else if (e.like === true) {
+      setReviewHeart((e.like = false));
+    }
+  };
+
+  let writeName = function (e) {
+    setNewName(e.target.value);
+    if (e.keyCode === 13) {
+      document.querySelector('.explain7_review').focus(); // 컨텐트창으로 포커스 이동
+    }
+  };
+
+  let writeContent = function (e) {
+    setNewContent(e.target.value);
+    if (e.keyCode === 13) {
+      addReview();
+      e.target.value = '';
+      document.querySelector('.explain7_name').value = ''; // name input 창 clean
+      document.querySelector('.explain7_name').focus(); // name 창으로 포커스 이동
+    }
+  };
+
+  let addReview = function (e) {
+    if (newName === '' || newContent === '') return;
+    // 리뷰창에 아무 입력도 없으면 함수 종료.
+    setNewAddReview([
+      ...newAddReview,
+      {
+        ID: newId,
+        name: newName,
+        // like: false,
+        like: reviewHeart,
+        content: newContent,
+      },
+    ]);
+    setNewId(newId + 1);
+    setNewName('');
+    setNewContent('');
+  };
+
+  let deleteReview = id => {
+    setNewAddReview(newAddReview.filter(el => el.ID !== id));
+  };
+  let [coffeeDetail, setCoffeeDetail] = useState({
+    id: 0,
+    name: '',
+    engName: '',
+    desciption: '',
+    img: '',
+    nutritionInfo: [],
+    allergy: '',
+    review: [],
+  });
+
+  useEffect(() => {
+    fetch(`/data/${params.id}.json`)
+      .then(res => res.json())
+      .then(data => {
+        setCoffeeDetail(data);
+      });
+  }, []);
+
+  let [redHeart, setRedHeart] = useState('false');
+  let [emptyHeart, setEmptyHeart] = useState('true');
+
+  let heartClick = e => {
+    if (emptyHeart) {
+      setEmptyHeart(false);
+      setRedHeart(true);
+    } else if (redHeart) {
+      setEmptyHeart(true);
+      setRedHeart(false);
+    }
+  };
+
   return (
     <div className="body_detail">
       <div className="high">
         <TopNav />
         <div className="second_nav">
-          <div className="big_name">콜드 브루</div>
+          <div className="big_name">{coffeeDetail.type}</div>
           <div className="Kategorie">
-            홈 > MENU > 음료 > 에스프레소 > 화이트 초콜릿 모카
+            홈 &gt; MENU &gt; 음료 &gt; 에스프레소 &gt; 화이트 초콜릿 모카
           </div>
         </div>
         <div className="picture_explain">
-          <img alt="coffee" src="/images/jeongminlee/coffee12.jpg" />
-
+          <img alt="coffee" src={coffeeDetail.img} />
           <div className="right_detail">
             <div className="explain1">
               <div className="name">
-                <div className="hangul_name">화이트 초콜릿 모카</div>
-                <span className="english_name">White Chocolate Mocha</span>
+                <div className="hangul_name">{coffeeDetail.name}</div>
+                <span className="english_name">{coffeeDetail.engName}</span>
               </div>
-              <i className="far fa-heart" />
-              <i className="fas fa-heart" />
+              <i
+                onClick={heartClick}
+                className={
+                  redHeart === true && emptyHeart === false
+                    ? 'fas fa-heart'
+                    : 'far fa-heart'
+                }
+              />
             </div>
             <hr className="hr_first" />
             <div className="explain2">
@@ -68,8 +168,8 @@ function Detail() {
             <div className="explain6">
               <div className="review_title">리뷰</div>
               <hr />
-              <div className="reviews">
-                <div className="review">
+              <ul className="reviews">
+                {/* <div className="review">
                   <span className="review_id">coffee_lover</span>
                   <span className="review_content">너무 맛있어요!</span>
                 </div>
@@ -85,20 +185,50 @@ function Detail() {
                     진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿
                     모카는 전설이다. 진짜 화이트 초···
                   </span>
-                </div>
-                <div className="explain7">
-                  <input
-                    className="explain7_explain"
-                    placeholder="리뷰를 입력해주세요."
-                  />
-                </div>
+                </div> */}
+                {/* ------------------------------------------------------ */}
+                {newAddReview.map(el => {
+                  return (
+                    <div key={el.ID} className="review">
+                      <span className="review_name">{el.name}</span>
+                      <span className="review_content">{el.content}</span>
+                      &nbsp;&nbsp;
+                      <i
+                        onClick={() => reviewHeartClick(el)}
+                        className={
+                          el.like === true
+                            ? 'fa-solid fa-heart'
+                            : 'fa-regular fa-heart'
+                        }
+                      />
+                      &nbsp;
+                      <i
+                        onClick={() => deleteReview(el.ID)}
+                        className="fa-solid fa-x"
+                      />
+                    </div>
+                  );
+                })}
+                {/* ------------------------------------------------------ */}
+              </ul>
+              <div className="explain7">
+                <input
+                  onKeyUp={writeName}
+                  className="explain7_name"
+                  placeholder="이름"
+                />
+                <input
+                  onKeyUp={(writeName, writeContent)}
+                  className="explain7_review"
+                  placeholder="리뷰를 입력해주세요."
+                />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="bottom">
+      <footer className="bottom">
         <div className="bottom_list1">
           <div className="highest">COMPANY</div>
           한눈에 보기
@@ -145,7 +275,7 @@ function Detail() {
         <span className="bottom_list6">
           <div className="highest">WEBUCKS</div>
         </span>
-      </div>
+      </footer>
     </div>
   );
 }
