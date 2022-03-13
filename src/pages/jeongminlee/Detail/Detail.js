@@ -6,13 +6,14 @@ import { useMatch, useParams } from 'react-router-dom';
 function Detail() {
   let params = useParams();
 
-  let [newID, setNewID] = useState('');
-  let [newContent, setNewContent] = useState(''); // 새 리뷰
+  let [newID, setNewID] = useState(''); // 새 리뷰를 쓸 아이디
+  let [newContent, setNewContent] = useState(''); // 새 리뷰의 내용
+  let [newAddReview, setNewAddReview] = useState([]); // 새 리뷰
 
   let writeID = function (e) {
     setNewID(e.target.value);
     if (e.keyCode === 13) {
-      document.querySelector('.explain7_review').focus();
+      document.querySelector('.explain7_review').focus(); // 리뷰창으로 포커스 이동
     }
   };
 
@@ -21,15 +22,14 @@ function Detail() {
     if (e.keyCode === 13) {
       addReview();
       e.target.value = '';
-      // setNewID('');
-      // setNewContent('');
+      document.querySelector('.explain7_ID').value = ''; // ID input 창 clean
     }
   };
-  let [newAddReview, setNewAddReview] = useState([]);
 
   let addReview = function (e) {
-    setNewID('');
-    setNewContent('');
+    if (newID === '' || newContent === '') return;
+    // 리뷰창에 아무 입력도 없으면 함수 종료.
+
     setNewAddReview([
       ...newAddReview,
       {
@@ -37,7 +37,8 @@ function Detail() {
         content: newContent,
       },
     ]);
-    // console.log(newAddReview);
+    setNewID('');
+    setNewContent('');
   };
 
   let [coffeeDetail, setCoffeeDetail] = useState({
@@ -170,10 +171,6 @@ function Detail() {
                     </div>
                   );
                 })}
-                {/* <div className="review">
-                  <span className="review_id">{newInput.name}</span>
-                  <span className="review_content">{newInput.content}</span>
-                </div> */}
                 {/* ------------------------------------------------------ */}
               </ul>
               <div className="explain7">
@@ -183,7 +180,7 @@ function Detail() {
                   placeholder="ID"
                 />
                 <input
-                  onKeyUp={writeContent}
+                  onKeyUp={(writeID, writeContent)}
                   className="explain7_review"
                   placeholder="리뷰를 입력해주세요."
                 />
