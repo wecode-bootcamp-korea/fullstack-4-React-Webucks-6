@@ -6,14 +6,15 @@ import { useMatch, useParams } from 'react-router-dom';
 function Detail() {
   let params = useParams();
 
-  let [newID, setNewID] = useState(''); // 새 리뷰를 쓸 아이디
+  let [newId, setNewId] = useState(0); // 새 리뷰의 key
+  let [newName, setNewName] = useState(''); // 새 리뷰를 쓸 아이디
   let [newContent, setNewContent] = useState(''); // 새 리뷰의 내용
   let [newAddReview, setNewAddReview] = useState([]); // 새 리뷰
 
-  let writeID = function (e) {
-    setNewID(e.target.value);
+  let writeName = function (e) {
+    setNewName(e.target.value);
     if (e.keyCode === 13) {
-      document.querySelector('.explain7_review').focus(); // 리뷰창으로 포커스 이동
+      document.querySelector('.explain7_review').focus(); // 컨텐트창으로 포커스 이동
     }
   };
 
@@ -22,25 +23,42 @@ function Detail() {
     if (e.keyCode === 13) {
       addReview();
       e.target.value = '';
-      document.querySelector('.explain7_ID').value = ''; // ID input 창 clean
+      document.querySelector('.explain7_name').value = ''; // name input 창 clean
+      document.querySelector('.explain7_name').focus(); // name 창으로 포커스 이동
     }
   };
 
   let addReview = function (e) {
-    if (newID === '' || newContent === '') return;
+    if (newName === '' || newContent === '') return;
     // 리뷰창에 아무 입력도 없으면 함수 종료.
-
     setNewAddReview([
       ...newAddReview,
       {
-        ID: newID,
+        ID: newId,
+        name: newName,
         content: newContent,
       },
     ]);
-    setNewID('');
+    setNewId(newId + 1);
+    setNewName('');
     setNewContent('');
   };
 
+  let deleteReview = id => {
+    // console.log(document.querySelector('.review').ID);
+    // let arr = ...newAddReview
+    setNewAddReview(newAddReview.filter(el => el.ID !== id));
+
+    // console.log(newAddReview.filter(el => el.ID !== id));
+
+    // console.log(newAddReview[2].ID);
+    // console.log(setNewAddReview());
+    // setNewAddReview(idx);
+    // if (idx !== -1) {
+    //   const tmpList = newAddReview.splice(idx, 1);
+    // }
+    // console.log(newAddReview[2].ID);
+  };
   let [coffeeDetail, setCoffeeDetail] = useState({
     id: 0,
     name: '',
@@ -145,7 +163,7 @@ function Detail() {
               <div className="review_title">리뷰</div>
               <hr />
               <ul className="reviews">
-                <div className="review">
+                {/* <div className="review">
                   <span className="review_id">coffee_lover</span>
                   <span className="review_content">너무 맛있어요!</span>
                 </div>
@@ -161,13 +179,18 @@ function Detail() {
                     진짜 화이트 초콜릿 모카는 전설이다. 진짜 화이트 초콜릿
                     모카는 전설이다. 진짜 화이트 초···
                   </span>
-                </div>
+                </div> */}
                 {/* ------------------------------------------------------ */}
                 {newAddReview.map(el => {
                   return (
-                    <div className="review">
-                      <span className="review_id">{el.ID}</span>
+                    <div key={el.ID} className="review">
+                      <span className="review_name">{el.name}</span>
                       <span className="review_content">{el.content}</span>
+                      &nbsp;&nbsp;
+                      <i
+                        onClick={() => deleteReview(el.ID)}
+                        className="fa-solid fa-x"
+                      />
                     </div>
                   );
                 })}
@@ -175,12 +198,12 @@ function Detail() {
               </ul>
               <div className="explain7">
                 <input
-                  onKeyUp={writeID}
-                  className="explain7_ID"
-                  placeholder="ID"
+                  onKeyUp={writeName}
+                  className="explain7_name"
+                  placeholder="이름"
                 />
                 <input
-                  onKeyUp={(writeID, writeContent)}
+                  onKeyUp={(writeName, writeContent)}
                   className="explain7_review"
                   placeholder="리뷰를 입력해주세요."
                 />
