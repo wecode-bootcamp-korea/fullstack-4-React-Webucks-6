@@ -1,14 +1,19 @@
 import React, { useState } from 'react';
 import TopsNav from '../components/TopsNav/TopsNav';
-import './Detail.scss';
-// import { Link } from 'react-router-dom';
+import Comment from '../components/Comment/Comment';
 
+import './Detail.scss';
+
+let globalId = 1;
 function DetailComponent() {
   const [inputValue, setInputValue] = useState('');
-  const [commentArr, setCommentArr] = useState([
-    { id: '', comment: inputValue },
-  ]);
+  const [commentArr, setCommentArr] = useState([]);
   const [changeRed, setChangeRed] = useState('fa-regular');
+
+  const deleteComment = id => {
+    const tmpList = commentArr.filter(review => review.key !== id);
+    setCommentArr(tmpList);
+  };
 
   // 댓글인풋값 받는 함수
   const handleInput = event => {
@@ -18,27 +23,35 @@ function DetailComponent() {
   //엔터 했을 때 코멘트를 배열에 저장하는 함수
   const addCommentEnter = event => {
     handleInput(event);
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13 && inputValue !== '') {
       event.preventDefault();
-      if (inputValue !== '') {
-        const array = [...commentArr];
-        array.push({ id: 'guest', comment: inputValue });
-        setCommentArr(array);
-        setInputValue('');
-      }
+      const array = [...commentArr];
+      array.push({
+        key: globalId++,
+        id: 'guest',
+        commentLike: false,
+        comment: inputValue,
+      });
+      setCommentArr(array);
+      setInputValue('');
     }
   };
 
-  const addCommentClick = event => {
+  const addbtnClick = event => {
     event.preventDefault();
     handleInput(event);
     const arr = [...commentArr];
-    arr.push({ id: 'guest', comment: inputValue });
+    arr.push({
+      key: globalId++,
+      id: 'guest',
+      commentLike: false,
+      comment: inputValue,
+    });
     setCommentArr(arr);
     setInputValue('');
   };
 
-  const isLike = () => {
+  const onClickLike = () => {
     changeRed === 'fa-regular'
       ? setChangeRed('fa-solid')
       : setChangeRed('fa-regular');
@@ -70,9 +83,7 @@ function DetailComponent() {
               <i
                 className={`
                   ${changeRed} fa-heart`}
-                onClick={() => {
-                  isLike();
-                }}
+                onClick={onClickLike}
               />
             </div>
             <div className="description">
@@ -116,23 +127,12 @@ function DetailComponent() {
             <div className="allergy-info">알레르기 유발 요인: 우유</div>
             <ul>
               <li className="reviews">리뷰</li>
-              <li className="comment_li">
-                <li className="comment__id">coffee_lover</li>
-                <li>너무 맛있어요!</li>
-              </li>
-              <li className="comment_li">
-                <span className="comment__id">CHOCO7</span>
-                <span>오늘도 바크콜을 마시러 갑니다.</span>
-              </li>
-              <li className="comment_li">
-                <li className="comment__id">legend_dev</li>
-                <li>진짜 바크콜은 전설이다. 진짜 화이팅.</li>
-              </li>
               {commentArr.map(comments => (
-                <li className="comment_li" key={comments.id}>
-                  <li className="comment__id">{comments.id}</li>
-                  <li>{comments.comment}</li>
-                </li>
+                <Comment
+                  key={comments.key}
+                  comments={comments}
+                  deleteComment={deleteComment}
+                />
               ))}
             </ul>
             <div className="input-box">
@@ -143,7 +143,7 @@ function DetailComponent() {
                 onChange={handleInput}
                 onKeyUp={addCommentEnter}
               />
-              <button type="button" onClick={addCommentClick}>
+              <button type="button" onClick={addbtnClick}>
                 ENTER
               </button>
             </div>

@@ -1,0 +1,47 @@
+$backgrount-color: #e5e5e5;
+$font-color: lightgray;
+
+@mixin border-bottom($weight, $color) {
+  border-bottom: $weight solid $color;
+}
+
+.first-box {
+  border-right: 1px dashed lightgray;
+}
+
+.reviews {
+  @include border-bottom(2px, $backgrount-color);
+  margin: 15px 0px;
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+
+.comment_li {
+  display: flex;
+  padding: 5px;
+  font-size: 10px;
+  padding-left: 5px;
+
+  .comment__id {
+    padding-right: 2px;
+    font-weight: bold;
+  }
+}
+.fa-trash-can {
+  padding-left: 5px;
+  font-size: 5px;
+  cursor: pointer;
+}
+
+.fa-regular {
+  padding-left: 5px;
+  font-size: 5px;
+  cursor: pointer;
+}
+
+.fa-solid {
+  padding-left: 5px;
+  font-size: 5px;
+  cursor: pointer;
+  color: red;
+}

@@ -67,6 +67,7 @@ h1 {
         padding-right: 10px;
         font-size: 20px;
         color: lightgray;
+        cursor: pointer;
       }
 
       .fa-solid {
@@ -125,23 +126,6 @@ h1 {
   padding: 12px;
   border-radius: 3px;
   background-color: $backgrount-color;
-}
-
-.reviews {
-  @include border-bottom(2px, $backgrount-color);
-  margin: 15px 0px;
-  padding-bottom: 5px;
-  font-size: 20px;
-}
-.comment_li {
-  display: flex;
-  padding: 5px;
-  font-size: 10px;
-
-  .comment__id {
-    padding-right: 2px;
-    font-weight: bold;
-  }
 }
 
 .input-box {
