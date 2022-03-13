@@ -5,7 +5,7 @@ $prod-fontsize: 10px;
 
 @mixin menu {
   display: flex;
-  margin: 15px;
+  margin: 20px 40px;
   padding-top: 14px;
   padding-left: 20px;
   padding-bottom: 14px;
@@ -28,16 +28,10 @@ $prod-fontsize: 10px;
 @mixin list-style {
   padding-right: 15px;
   text-align: center;
-  list-style: none;
   font-size: $prod-fontsize;
 }
 
-@mixin imgs-size {
-  width: 250px;
-  height: 250px;
-}
-
-section {
+.jiho_section {
   font-family: $font;
 }
 
@@ -45,55 +39,17 @@ section {
   @include menu;
   background-color: $menubar-backgroundColor;
 
-  li:first-child {
+  :first-child {
     font-size: 12px;
   }
 
-  li:last-child {
+  :last-child {
     padding-left: 5px;
     font-size: $menu-fontsize;
   }
 }
 
-.list {
+.coffee-list {
   display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
-
-  ul {
-    @include flex-center;
-    @include list-style;
-
-    li {
-      @include li-flex;
-    }
-  }
-}
-
-.oneLine {
-  display: flex;
-  padding-top: 10px;
-
-  ul {
-    @include flex-center;
-    @include list-style;
-  }
-
-  li {
-    @include li-flex;
-  }
-}
-
-.imgs img {
-  @include imgs-size;
-  transition: all 0.7s linear;
-}
-
-.imgs {
-  @include imgs-size;
-  overflow: hidden;
-}
-
-.imgs img:hover {
-  transform: scale(1.1);
+  flex-wrap: wrap;
 }

@@ -38,8 +38,14 @@ $font-size-smail: 7px;
       height: 200px;
     }
   }
+}
 
-  input {
+.inputAndBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .loginArea_input {
     @include margin-padding-sizing;
     @include border-sizing(lightgray);
     display: flex;
@@ -47,15 +53,13 @@ $font-size-smail: 7px;
     font-size: $font-size-smail;
   }
 
-  .inputAndBtn {
-    button {
-      @include flex-center;
-      @include margin-padding-sizing;
-      @include border-sizing(white);
-      background-color: #add3ea;
-      color: white;
-      cursor: pointer;
-    }
+  .loginArea_btn {
+    @include flex-center;
+    @include margin-padding-sizing;
+    @include border-sizing(white);
+    background-color: #3e98f2;
+    color: white;
+    cursor: pointer;
   }
 }
 
@@ -67,3 +71,5 @@ $font-size-smail: 7px;
   font-size: $font-size-smail;
   text-decoration: none;
 }
+
+// #add3ea
