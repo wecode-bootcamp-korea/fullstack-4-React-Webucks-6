@@ -146,7 +146,7 @@ td:nth-of-type(odd) {
   font-size: 14px;
 }
 .review_content {
-  font-size: 10px;
+  font-size: 12px;
   // font-weight: bold;
   padding-left: 10px;
 }
@@ -204,7 +204,19 @@ td:nth-of-type(odd) {
   color: red;
 }
 
-.fa-x {
-  font-size: 10px;
-  font-weight: bolder;
+i {
+  &.fa-solid {
+    font-size: 13px;
+    color: red;
+  }
+
+  &.fa-regular {
+    font-size: 13px;
+    // color: red;
+  }
+
+  &.fa-x {
+    font-size: 13px;
+    color: black;
+  }
 }

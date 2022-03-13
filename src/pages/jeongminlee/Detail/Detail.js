@@ -10,6 +10,22 @@ function Detail() {
   let [newName, setNewName] = useState(''); // 새 리뷰를 쓸 아이디
   let [newContent, setNewContent] = useState(''); // 새 리뷰의 내용
   let [newAddReview, setNewAddReview] = useState([]); // 새 리뷰
+  let [reviewHeart, setReviewHeart] = useState(false);
+
+  let reviewHeartClick = e => {
+    // let filtered = newAddReview.filter(el => el.ID === id);
+    // if (filtered[0].like === false) {
+    //   setReviewHeart((filtered[0].like = true));
+    // } else if (filtered[0].like === true) {
+    //   setReviewHeart((filtered[0].like = false));
+    // }
+
+    if (e.like === false) {
+      setReviewHeart((e.like = true));
+    } else if (e.like === true) {
+      setReviewHeart((e.like = false));
+    }
+  };
 
   let writeName = function (e) {
     setNewName(e.target.value);
@@ -36,6 +52,8 @@ function Detail() {
       {
         ID: newId,
         name: newName,
+        // like: false,
+        like: reviewHeart,
         content: newContent,
       },
     ]);
@@ -45,19 +63,7 @@ function Detail() {
   };
 
   let deleteReview = id => {
-    // console.log(document.querySelector('.review').ID);
-    // let arr = ...newAddReview
     setNewAddReview(newAddReview.filter(el => el.ID !== id));
-
-    // console.log(newAddReview.filter(el => el.ID !== id));
-
-    // console.log(newAddReview[2].ID);
-    // console.log(setNewAddReview());
-    // setNewAddReview(idx);
-    // if (idx !== -1) {
-    //   const tmpList = newAddReview.splice(idx, 1);
-    // }
-    // console.log(newAddReview[2].ID);
   };
   let [coffeeDetail, setCoffeeDetail] = useState({
     id: 0,
@@ -187,6 +193,15 @@ function Detail() {
                       <span className="review_name">{el.name}</span>
                       <span className="review_content">{el.content}</span>
                       &nbsp;&nbsp;
+                      <i
+                        onClick={() => reviewHeartClick(el)}
+                        className={
+                          el.like === true
+                            ? 'fa-solid fa-heart'
+                            : 'fa-regular fa-heart'
+                        }
+                      />
+                      &nbsp;
                       <i
                         onClick={() => deleteReview(el.ID)}
                         className="fa-solid fa-x"
